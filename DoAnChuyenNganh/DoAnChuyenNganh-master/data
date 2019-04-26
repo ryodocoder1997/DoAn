@@ -1,0 +1,15 @@
+import sqlite3
+
+conn = sqlite3.connect('doan.sqlite3')
+
+print('Opened database successfully')
+
+conn.excute('''CREATE TABLE TAIKHOAN
+	(ID INT PRIMARY KEY NOT NULL,
+	PASSWORD CHAR(50) NOT NULL,
+	KINDOFACCOUNT CHAR(20) NOT NULL,
+	FINALTIME DATETIME NOT NULL;)''')
+
+print ('Table created successfully')
+
+conn.close()

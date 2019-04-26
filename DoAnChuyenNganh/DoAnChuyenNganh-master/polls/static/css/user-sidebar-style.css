@@ -1,0 +1,87 @@
+/*
+=======================
+        Common
+=======================      
+*/
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+}
+
+.user-container{
+    height: 100%;
+}
+
+.sidebar{
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: #e44d3a;
+}
+
+.main{
+    float: right;
+    width: 80%;
+    height: 100%;
+}
+
+.content{
+    padding: 50px 100px;
+}
+
+
+/*
+=======================
+        Sidebar
+=======================      
+*/
+
+.sitename{
+    text-align: center;
+}
+
+.sitename a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.sitename a:hover{
+    color: lightgrey;
+}
+
+ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    list-style: none;
+    border-bottom: 1px solid white;
+    padding-left: 30px;
+    line-height: 60px;
+}
+
+ul li:first-child{
+    border-top: 1px solid white;
+}
+
+ul li:hover{
+    background-color: white;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    line-height: 60px;
+}
+
+.active{
+    background-color: #b23b2c;
+}

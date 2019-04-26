@@ -1,0 +1,23 @@
+.owl-carousel img
+{
+    border-radius: 50%;
+}
+
+.owl-carousel .owl-nav .owl-prev, .owl-carousel .owl-nav .owl-next
+{
+    position: absolute;
+    top: 45%;
+    color: #e44d3a;
+}
+
+.owl-carousel .owl-nav .owl-prev 
+{
+    left: 10px;
+}
+.owl-carousel .owl-nav .owl-next
+{
+    right: 10px;
+}
+.checked{
+    color: #e44d3a;
+}

@@ -1,0 +1,166 @@
+.register-link{
+    color: #ffffff;
+}
+
+.register-link:hover{
+    color: #bfbfbf;
+}
+
+.btn-submit{
+    width: 100%;
+    text-align: center;
+}
+/* =============== Custom Radio Button ============= */
+.customRadio input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.customRadio input[type="radio"]+label {
+  position: relative;
+  padding: 3px 0 0 40px;
+  cursor: pointer;
+}
+
+.customRadio input[type="radio"]+label:before {
+  content: '';
+  background: #fff;
+  border: 2px solid #e44d3a;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.customRadio input[type="radio"]+label:after {
+  content: '';
+  background: #e44d3a;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  opacity: 0;
+  transform: scale(2);
+  transition: transform 0.3s linear, opacity 0.3s linear;
+}
+
+.customRadio input[type="radio"]:checked+label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =============== User Input ============= */
+input[type="text"], input[type="password"], input[type="email"]{
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus{
+    border-color: #e44d3a;
+    box-shadow: 0 0 8px 0 #e44d3a;
+}
+
+.user-input input[type="text"], .user-input input[type="password"], .user-input input[type="email"]{
+    padding-left: 40px;
+}
+
+.user-input{
+    position: relative;
+}
+
+.user-input i{
+    position: absolute;
+    left: 0;
+    top: 4px;
+    padding: 9px 8px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.user-input input[type="text"]:focus + i, .user-input input[type="password"]:focus + i, .user-input input[type="email"]:focus + i{
+    color: #e44d3a;
+}
+
+.user-input .icon-input i{
+    background-color: #e44d3a;
+    color: #fff;
+    padding: 9px 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+.user-input .icon-input input[type="text"]:focus + i, .user-input .icon-input input[type="password"]:focus + i, .user-input .icon-input input[type="email"]:focus + i{
+    color: #fff;
+    background-color: #e44d3a;
+}
+
+/* =============== Custom Check Box ============= */
+.customCheckbox input[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.customCheckbox input[type="checkbox"]+label {
+    position: relative;
+    padding: 3px 0 0 40px;
+    cursor: pointer;
+}
+
+.customCheckbox input[type="checkbox"]+label:before {
+    content: '';
+    background: #fff;
+    border: 2px solid #e44d3a;
+    border-radius: 3px;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.customCheckbox input[type="checkbox"]+label:after {
+    content: '';
+    border-style: solid;
+    border-width: 0 0 2px 2px;
+    border-color: transparent transparent #e44d3a #e44d3a;
+    width: 15px;
+    height: 8px;
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    opacity: 0;
+    transform: scale(2) rotate(-45deg);
+    transition: transform 0.3s linear, opacity 0.3s linear;
+}
+
+.customCheckbox input[type="checkbox"]:checked+label:after {
+    opacity: 1;
+    transform: scale(1) rotate(-45deg);
+}
+
+.customSelectOption{
+    padding-bottom: 10px;
+}
+
+select{
+    width: 100%;
+    background: #e44d3a;
+    color: #fff;
+    padding: 10px;
+    width: 250px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    -webkit-appearance: button;
+    outline: none;
+
+}

@@ -1,0 +1,872 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<head>
+    {% block title %}
+    <title>Danh Sách Khóa Học</title>
+    {% endblock %}
+
+    {% block styles %}
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!--<link rel="stylesheet" href="/static/css/teacher.css">-->
+    <link rel="stylesheet" href="{% static 'css/customized-list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login-signup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/customized-navigation-bar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/customized-footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Cumtomized CSS -->
+    <link rel="stylesheet" href="{% static 'css/customized-bootstrap.css' %}">
+
+    <!-- Customized Footer CSS -->
+    <link rel="stylesheet" href="{% static 'css/customized-footer.css'%}">
+    {% endblock %}
+</head>
+
+<body style="background-color: #f2f2f2">
+{% block content %}
+<section class="home-category">
+    <div class="container" style="padding-top:50px;">
+        <div class="region region-content">
+            <div id="block-system-main" class="block block-system">
+
+
+                <div class="content">
+                    <div class="main-wrapper">
+                        <div class="view view-users view-id-users view-display-id-page_2 col-popover view-dom-id-5680190255ab07e96a03ed583ee83de8">
+
+                            <div class="content-category fixed">
+                                <div class="view-user-page2-view-header">
+                                    <span>Danh sách khóa học</span>
+                                </div>
+                                <div class="container">
+                                    <!--filter-->
+                                    <div class="bg-gradient-pink" style="padding:0 10px;">
+                                        <div class="view-filters box-search">
+                                            <form action="/teacher" method="get" id="views-exposed-form-users-page-2"
+                                                  accept-charset="UTF-8">
+                                                <div style="text-align:center;">
+                                                    <div class="views-exposed-form">
+                                                        <div class="views-exposed-widgets clearfix">
+                                                            <div id="edit-place-wrapper"
+                                                                 class="views-exposed-widget views-widget-filter-field_place_tid">
+                                                                <div class="views-widget">
+                                                                    <div class="form-item form-type-select form-item-place">
+                                                                        <select id="edit-place" name="place"
+                                                                                class="form-select">
+                                                                            <option value="All" selected="selected">
+                                                                                -Chọn địa điểm -
+                                                                            </option>
+                                                                            <optgroup label="Địa điểm phổ biến">
+                                                                                <option value="1">Hà Nội</option>
+                                                                                <option value="2">TP. HCM</option>
+                                                                                <option value="10">Hải Phòng</option>
+                                                                                <option value="3">Đà Nẵng</option>
+                                                                                <option value="11">Cần Thơ</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Tỉnh, thành phố khác">
+                                                                                <option value="17">An Giang</option>
+                                                                                <option value="18">Bà Rịa-Vũng Tàu
+                                                                                </option>
+                                                                                <option value="21">Bắc Giang</option>
+                                                                                <option value="20">Bắc Kạn</option>
+                                                                                <option value="19">Bạc Liêu</option>
+                                                                                <option value="22">Bắc Ninh</option>
+                                                                                <option value="23">Bến Tre</option>
+                                                                                <option value="14">Bình Dương</option>
+                                                                                <option value="25">Bình Phước</option>
+                                                                                <option value="26">Bình Thuận</option>
+                                                                                <option value="24">Bình Định</option>
+                                                                                <option value="27">Cà Mau</option>
+                                                                                <option value="28">Cao Bằng</option>
+                                                                                <option value="29">Đắk Lắk</option>
+                                                                                <option value="30">Đắk Nông</option>
+                                                                                <option value="31">Điện Biên</option>
+                                                                                <option value="13">Đồng Nai</option>
+                                                                                <option value="32">Đồng Tháp</option>
+                                                                                <option value="33">Gia Lai</option>
+                                                                                <option value="34">Hà Giang</option>
+                                                                                <option value="35">Hà Nam</option>
+                                                                                <option value="36">Hà Tây cũ (Hà Nội)
+                                                                                </option>
+                                                                                <option value="37">Hà Tĩnh</option>
+                                                                                <option value="38">Hải Dương</option>
+                                                                                <option value="40">Hậu Giang</option>
+                                                                                <option value="39">Hòa Bình</option>
+                                                                                <option value="12">Huế</option>
+                                                                                <option value="41">Hưng Yên</option>
+                                                                                <option value="42">Khánh Hòa</option>
+                                                                                <option value="43">Kiên Giang</option>
+                                                                                <option value="44">Kon Tum</option>
+                                                                                <option value="45">Lai Châu</option>
+                                                                                <option value="48">Lâm Đồng</option>
+                                                                                <option value="47">Lạng Sơn</option>
+                                                                                <option value="46">Lào Cai</option>
+                                                                                <option value="49">Long An</option>
+                                                                                <option value="50">Nam Định</option>
+                                                                                <option value="51">Ninh Bình</option>
+                                                                                <option value="52">Ninh Thuận</option>
+                                                                                <option value="16">Nghệ An</option>
+                                                                                <option value="53">Phú Thọ</option>
+                                                                                <option value="54">Phú Yên</option>
+                                                                                <option value="55">Quảng Bình</option>
+                                                                                <option value="56">Quảng Nam</option>
+                                                                                <option value="57">Quảng Ngãi</option>
+                                                                                <option value="58">Quảng Ninh</option>
+                                                                                <option value="59">Quảng Trị</option>
+                                                                                <option value="60">Sóc Trăng</option>
+                                                                                <option value="61">Sơn La</option>
+                                                                                <option value="62">Tây Ninh</option>
+                                                                                <option value="63">Thái Bình</option>
+                                                                                <option value="64">Thái Nguyên</option>
+                                                                                <option value="15">Thanh Hóa</option>
+                                                                                <option value="65">Tiền Giang</option>
+                                                                                <option value="66">Trà Vinh</option>
+                                                                                <option value="67">Tuyên Quang</option>
+                                                                                <option value="68">Vĩnh Long</option>
+                                                                                <option value="69">Vĩnh Phúc</option>
+                                                                                <option value="70">Yên Bái</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="International cities">
+                                                                                <option value="141">Cities in Asia
+                                                                                </option>
+                                                                                <option value="146">Cities in Africa
+                                                                                </option>
+                                                                                <option value="145">Cities in Australia
+                                                                                    (Oceania)
+                                                                                </option>
+                                                                                <option value="142">Cities in Europe
+                                                                                </option>
+                                                                                <option value="143">Cities in North
+                                                                                    America
+                                                                                </option>
+                                                                                <option value="144">Cities in South
+                                                                                    America
+                                                                                </option>
+                                                                            </optgroup>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="edit-subject-wrapper"
+                                                                 class="views-exposed-widget views-widget-filter-field_subject_tid">
+                                                                <div class="views-widget">
+                                                                    <div class="form-item form-type-select form-item-subject">
+                                                                        <select id="edit-subject" name="subject"
+                                                                                class="form-select">
+                                                                            <option value="All" selected="selected">
+                                                                                -Chọn môn học -
+                                                                            </option>
+                                                                            <optgroup label="Môn học phổ thông">
+                                                                                <option value="72">Toán</option>
+                                                                                <option value="73">Lý</option>
+                                                                                <option value="74">Hóa</option>
+                                                                                <option value="76">Văn</option>
+                                                                                <option value="677">Tiếng Việt</option>
+                                                                                <option value="406">Lịch sử</option>
+                                                                                <option value="407">Địa lý</option>
+                                                                                <option value="81">Sinh</option>
+                                                                                <option value="410">Môn phổ thông khác
+                                                                                </option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Ngoại ngữ">
+                                                                                <option value="71">Tiếng Anh</option>
+                                                                                <option value="82">Tiếng Nhật</option>
+                                                                                <option value="83">Tiếng Hàn</option>
+                                                                                <option value="85">Tiếng Đức</option>
+                                                                                <option value="84">Tiếng Pháp</option>
+                                                                                <option value="409">Tiếng Trung</option>
+                                                                                <option value="86">Ngoại ngữ khác
+                                                                                </option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Học nghề">
+                                                                                <option value="77">Kỹ năng mềm</option>
+                                                                                <option value="404">Nuôi dạy trẻ
+                                                                                </option>
+                                                                                <option value="411">Công nghệ thông tin
+                                                                                </option>
+                                                                                <option value="412">Thiết kế - Đồ họa -
+                                                                                    Video
+                                                                                </option>
+                                                                                <option value="90">Sales - Marketing
+                                                                                </option>
+                                                                                <option value="682">Ẩm thực</option>
+                                                                                <option value="95">Ngành nghề khác
+                                                                                </option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Thể thao - Nghệ thuật">
+                                                                                <option value="97">Âm nhạc</option>
+                                                                                <option value="99">Hội họa</option>
+                                                                                <option value="101">Dance (nhảy)
+                                                                                </option>
+                                                                                <option value="78">Gyms, yoga, fitness
+                                                                                </option>
+                                                                                <option value="102">Thể thao khác
+                                                                                </option>
+                                                                                <option value="103">Nghệ thuật khác
+                                                                                </option>
+                                                                            </optgroup>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="edit-topic-wrapper"
+                                                                 class="views-exposed-widget views-widget-filter-field_study_topic_tid">
+                                                                <div class="views-widget">
+                                                                    <div class="form-item form-type-select form-item-topic">
+                                                                        <select id="edit-topic" name="topic"
+                                                                                class="form-select">
+                                                                            <option value="All" selected="selected">
+                                                                                -Chọn chủ đề-
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="edit-method-wrapper"
+                                                                 class="views-exposed-widget views-widget-filter-field_teaching_type_value">
+                                                                <div class="views-widget">
+                                                                    <div class="form-item form-type-select form-item-method">
+                                                                        <select id="edit-method" name="method"
+                                                                                class="form-select">
+                                                                            <option value="All" selected="selected">
+                                                                                -Hình thức dạy-
+                                                                            </option>
+                                                                            <option value="0">(Offline) Gặp mặt</option>
+                                                                            <option value="1">(Online) Trực tuyến
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="views-exposed-widget views-submit-button">
+                                                                <input type="submit" id="edit-submit-users" name=""
+                                                                       value="Áp dụng" class="form-submit"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="view-user-page2-filter ">
+
+                                        <!--Cout số kết quả-->
+                                        <div style="padding: 0 0 10px;font-size: 16px; color: #970218;">
+                                            Có 6969 kết quả
+                                        </div>
+                                    </div>
+
+                                    <!--if not empty, then show order by-->
+                                    <div class="header-block">
+                                        <button class="visible-xs"><i class="fa fa-list"></i></button>
+                                        <ul class="nav nav-tabs pull-left">
+                                            <li class="active">
+                                                <a href="/teacher">Đúng nhất</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="/teacher?orderby=review">Đánh giá tốt nhất</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="/teacher?orderby=view">Xem nhiều nhất</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="/teacher?orderby=price">Học phí tốt nhất</a>
+                                            </li>
+                                        </ul><!-- /.nav-tabs -->
+                                    </div><!-- /.header-block -->
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="tab-1">
+                                            <div class="view view-users view-id-users view-display-id-page_2 col-popover view-dom-id-5680190255ab07e96a03ed583ee83de8">
+                                                <div class="view-content">
+                                                    <div class="row">
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img src="{% static 'images/trungtam1.png'%}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam1's picture"
+                                                                                 title="trungtam1's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Khóa Học Anh Văn Thiếu Nhi</a>
+                                                                        </h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>400.000 vnđ/h</span> - <span> 800.000 vnđ/h</span>
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Đào tạo anh văn thiếu nhi từ độ tuổi mẫu
+                                                                            giáo.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="12596"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem Thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/trungtam2.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam2's picture"
+                                                                                 title="trungtam2's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Khóa Học tiếng anh cho người vừa
+                                                                            đi
+                                                                            làm</a>
+                                                                        </h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>100.000 vnđ/h</span> - <span> 750.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Đào tạo anh văn ngoài giờ cho người vừa đi
+                                                                            làm.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="13587"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/trungtam3.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam3's picture"
+                                                                                 title="trungtam3's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href=""> Khóa học tiếng Anh vỡ lòng</a>
+                                                                        </h4>
+                                                                        <p><span>Quảng Ngãi</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>150.000 vnđ/h</span> - <span> 850.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Dạy và cho trẻ em một môi trường để phát
+                                                                            triển
+                                                                            và học tập ngoại ngữ tiếng Anh.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="7385"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem Thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img src="{% static 'images/trungtam1.png'%}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam1's picture"
+                                                                                 title="trungtam1's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Khóa Học Anh Văn Thiếu Nhi</a>
+                                                                        </h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>400.000 vnđ/h</span> - <span> 800.000 vnđ/h</span>
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Đào tạo anh văn thiếu nhi từ độ tuổi mẫu
+                                                                            giáo.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="12596"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem Thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/trungtam2.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam2's picture"
+                                                                                 title="trungtam2's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Khóa Học tiếng anh cho người vừa
+                                                                            đi
+                                                                            làm</a>
+                                                                        </h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>100.000 vnđ/h</span> - <span> 750.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Đào tạo anh văn ngoài giờ cho người vừa đi
+                                                                            làm.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="13587"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/trungtam3.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam3's picture"
+                                                                                 title="trungtam3's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href=""> Khóa học tiếng Anh vỡ lòng</a>
+                                                                        </h4>
+                                                                        <p><span>Quảng Ngãi</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>150.000 vnđ/h</span> - <span> 850.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Dạy và cho trẻ em một môi trường để phát
+                                                                            triển
+                                                                            và học tập ngoại ngữ tiếng Anh.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="7385"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem Thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img src="{% static 'images/trungtam1.png'%}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam1's picture"
+                                                                                 title="trungtam1's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Khóa Học Anh Văn Thiếu Nhi</a>
+                                                                        </h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>400.000 vnđ/h</span> - <span> 800.000 vnđ/h</span>
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Đào tạo anh văn thiếu nhi từ độ tuổi mẫu
+                                                                            giáo.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="12596"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem Thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/trungtam2.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam2's picture"
+                                                                                 title="trungtam2's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Khóa Học tiếng anh cho người vừa
+                                                                            đi
+                                                                            làm</a>
+                                                                        </h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>100.000 vnđ/h</span> - <span> 750.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Đào tạo anh văn ngoài giờ cho người vừa đi
+                                                                            làm.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="13587"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/trungtam3.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam3's picture"
+                                                                                 title="trungtam3's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href=""> Khóa học tiếng Anh vỡ lòng</a>
+                                                                        </h4>
+                                                                        <p><span>Quảng Ngãi</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>150.000 vnđ/h</span> - <span> 850.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Dạy và cho trẻ em một môi trường để phát
+                                                                            triển
+                                                                            và học tập ngoại ngữ tiếng Anh.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="7385"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem Thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img src="{% static 'images/trungtam1.png'%}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam1's picture"
+                                                                                 title="trungtam1's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Khóa Học Anh Văn Thiếu Nhi</a>
+                                                                        </h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>400.000 vnđ/h</span> - <span> 800.000 vnđ/h</span>
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Đào tạo anh văn thiếu nhi từ độ tuổi mẫu
+                                                                            giáo.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="12596"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem Thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/trungtam2.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam2's picture"
+                                                                                 title="trungtam2's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Khóa Học tiếng anh cho người vừa
+                                                                            đi
+                                                                            làm</a>
+                                                                        </h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>100.000 vnđ/h</span> - <span> 750.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Đào tạo anh văn ngoài giờ cho người vừa đi
+                                                                            làm.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="13587"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/trungtam3.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="trungtam3's picture"
+                                                                                 title="trungtam3's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href=""> Khóa học tiếng Anh vỡ lòng</a>
+                                                                        </h4>
+                                                                        <p><span>Quảng Ngãi</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>150.000 vnđ/h</span> - <span> 850.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Dạy và cho trẻ em một môi trường để phát
+                                                                            triển
+                                                                            và học tập ngoại ngữ tiếng Anh.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="7385"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Xem Thêm</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="item-list">
+                                        <ul class="pager">
+                                            <li class="pager-first first"></li>
+                                            <li class="pager-current">1</li>
+                                            <li class="pager-item"><a title="Go to page 2" href="/teacher?page=1">2</a>
+                                            </li>
+                                            <li class="pager-item"><a title="Go to page 3" href="/teacher?page=2">3</a>
+                                            </li>
+                                            <li class="pager-item"><a title="Go to page 4" href="/teacher?page=3">4</a>
+                                            </li>
+                                            <li class="pager-item"><a title="Go to page 5" href="/teacher?page=4">5</a>
+                                            </li>
+                                            <li class="pager-ellipsis">…</li>
+                                            <li class="pager-next"><a href="/teacher?page=1"> sau ›</a></li>
+                                            <li class="pager-last last"><a href="/teacher?page=339">cuối ››</a></li>
+                                        </ul>
+                                    </div>
+                                </div><!-- /.content-category -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+$('#btnShowRegis').click(function() {
+$('#loginModal').modal('hide');
+});
+
+$('#btnShowLogin').click(function() {
+$('#regisModal').modal('hide');
+});
+});
+</script>
+{% endblock %}
+
+</body>

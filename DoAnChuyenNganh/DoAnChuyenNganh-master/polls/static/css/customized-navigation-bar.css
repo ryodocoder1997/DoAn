@@ -1,0 +1,83 @@
+.style-banner{
+    background: linear-gradient(-45deg, #e0cb0d 0, #e44d3a 100%);
+    height: 50px;
+}
+
+.navbar{
+    height: 50px;
+}
+
+@media (max-width:575px)
+{
+    .navbar{
+        max-height:211px;
+    }
+}
+
+.search-bar.st2 {
+	float: right;
+}
+.search-bar {
+	float: left;
+	width: 396.83px;
+}
+.search-bar form {
+	float: left;
+	width: 100%;
+	position: relative;
+}
+.search-bar form input {
+	width: 100%;
+	background-color: #fff;
+	height: 38px;
+	color: #212529;
+	border-radius: 4px;
+	font-size: 12px;
+	border: 0;
+	padding: 0 10px;
+}
+
+.search-bar form button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #efefef;
+	border-radius: 4px;
+	width: 38px;
+	height: 100%;
+	border: 0;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.search-bar form button:hover{
+    background-color: #b23b2c;
+}
+
+.search-bar form button i:hover{
+    color: #fff;
+}
+
+.search-bar form button i {
+	color: #e44d3a;
+	font-size: 20px;
+	font-weight: bold;
+	transition: 0.2s;
+}
+
+.carousel-search{
+    width: 444.86px;
+}
+
+.btn-outline-light:hover{
+    color:#e44d3a;
+}
+.btn-search{
+    color: #e44d3a;
+    background-color: #fff;
+}
+
+.btn-search:hover{
+    color: #fff;
+    background-color: #b23b2c;
+}

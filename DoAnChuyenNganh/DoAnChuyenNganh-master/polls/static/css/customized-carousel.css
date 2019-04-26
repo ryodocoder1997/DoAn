@@ -1,0 +1,42 @@
+.carousel-caption{
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h3{
+  font-size: 50px;
+}
+
+.carousel-caption p{
+  font-size: 20px;
+}
+
+.carousel-caption a{
+  font-size: 20px;
+}
+
+.slide-content{
+  position: relative;
+  color: #ffffff;
+}
+
+.slide-content p{
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.slide-content a{
+  margin-top: 10px;
+}
+
+.carousel-control-prev, .carousel-control-next{
+  width: 100px;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  height: 40px;
+  width: 40px;
+  background-image: #e44d3a;
+  border-radius: 50%;
+}
+

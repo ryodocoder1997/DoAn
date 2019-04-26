@@ -1,0 +1,39 @@
+.gblock-v2{
+    margin-bottom: 20px;
+    display: grid;
+}
+
+.gblock-v2 .body-block{
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 5px;
+}
+
+.gblock-v2 .block-calendar{
+    display: flex;
+}
+
+.row-calendar{
+    min-width: 100px;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-normal, .calendar-active{
+    list-style: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    color: #e44d3a;
+    border: 1px solid #e44d3a;
+    border-radius: 2px;
+}
+
+.calendar-active{
+    background: #e44d3a;
+    color: #ffffff;
+}

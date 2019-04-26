@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="931b7c5a-340e-4145-8a0a-182b11dd28e1" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/signup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="32" column="45" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="45" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#form#0;n#!!top" />
+                <element signature="n#div#3;n#div#0;n#form#0;n#!!top" />
+                <element signature="n#div#4;n#div#0;n#form#0;n#!!top" />
+                <element signature="n#style#0;n#label#0;n#div#6;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#7;n#div#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/user-profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/doan/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1785">
+              <caret line="105" column="23" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="39" column="69" lean-forward="true" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/term-of-uses.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/doan/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+              <folding>
+                <element signature="e#628#660#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>style-banner</find>
+      <find>cover-sec</find>
+      <find>giới thiệu</find>
+      <find>những học viên</find>
+      <find>Học Vấn</find>
+      <find>degree</find>
+      <find>Những học viên</find>
+      <find>hiện tại</find>
+      <find>HS</find>
+      <find>Giảng viên</find>
+      <find>Marry</find>
+      <find>teachlist-dd</find>
+      <find>intro-dd</find>
+      <find>login</find>
+      <find>dir</find>
+      <find>btn</find>
+      <find>đăng nhập</find>
+      <find>auth</find>
+      <find>DẠY HỌC NGAY</find>
+      <find>summar</find>
+      <find>home</find>
+      <find>Giới</find>
+      <find>giới tính</find>
+      <find>user-input</find>
+      <find>row</find>
+      <find>william</find>
+      <find>John Doe</find>
+      <find>last</find>
+      <find>endfor</find>
+      <find>authi</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/tutor-list.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/style.css" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/business.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/term-of-uses.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/password_reset_form.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/password_reset_done.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/password_reset_confirm.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/password_reset_complete.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/migrations/forms.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/customized-bootstrap.css" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/log-page.css" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/base.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/homepage.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/polls/forms.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/polls/views.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/doan/urls.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/urls.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/profile.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/admin.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/doan/settings.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/polls/models.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/polls/admin.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/models.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/forms.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/login-signup.css" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/views.py" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/signup.html" />
+        <option value="$PROJECT_DIR$/DoAnChuyenNganh-master/templates/user-profile.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="206" />
+    <option name="y" value="16" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="DoAnChuyenNganh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoAnChuyenNganh" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DoAnChuyenNganh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoAnChuyenNganh" type="462c0819:PsiDirectoryNode" />
+              <item name="DoAnChuyenNganh-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DoAnChuyenNganh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoAnChuyenNganh" type="462c0819:PsiDirectoryNode" />
+              <item name="DoAnChuyenNganh-master" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DoAnChuyenNganh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoAnChuyenNganh" type="462c0819:PsiDirectoryNode" />
+              <item name="DoAnChuyenNganh-master" type="462c0819:PsiDirectoryNode" />
+              <item name="doan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DoAnChuyenNganh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoAnChuyenNganh" type="462c0819:PsiDirectoryNode" />
+              <item name="DoAnChuyenNganh-master" type="462c0819:PsiDirectoryNode" />
+              <item name="polls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DoAnChuyenNganh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoAnChuyenNganh" type="462c0819:PsiDirectoryNode" />
+              <item name="DoAnChuyenNganh-master" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DoAnChuyenNganh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoAnChuyenNganh" type="462c0819:PsiDirectoryNode" />
+              <item name="DoAnChuyenNganh-master" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="DoAnChuyenNganh" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../accounts" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="931b7c5a-340e-4145-8a0a-182b11dd28e1" name="Default Changelist" comment="" />
+      <created>1555220038560</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555220038560</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49874687" visible="true" weight="0.2514881" />
+      <window_info id="Structure" order="1" sideWeight="0.5012531" side_tool="true" weight="0.2514881" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34697217" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49874687" visible="true" weight="0.2514881" />
+      <window_info id="Structure" order="1" sideWeight="0.5012531" side_tool="true" weight="0.2514881" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34697217" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="226" selection-start-line="226" selection-end-line="228" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/GitHub/DoAnChuyenNganh/doan/polls/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/tutor-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15929">
+          <caret line="937" column="7" selection-start-line="937" selection-start-column="7" selection-end-line="937" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90797">
+          <caret line="5341" column="17" selection-start-line="5341" selection-start-column="17" selection-end-line="5341" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/business.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="326" column="30" lean-forward="true" selection-start-line="326" selection-start-column="30" selection-end-line="326" selection-end-column="30" />
+          <folding>
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#body#0;n#!!top" />
+            <element signature="n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#body#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/doan/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/course-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/sent_emails/20190419-143815-2198077494048.log" />
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/password_reset_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="56" selection-start-column="56" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/password_reset_done.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/password_reset_confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/sent_emails/20190419-144437-2198077461728.log" />
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/password_reset_complete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/migrations/forms.py" />
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/test.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/customized-bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/home-page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2227">
+          <caret line="131" column="5" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/customized-navigation-bar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="67" column="8" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/log-page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/academy-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5423">
+          <caret line="319" column="104" selection-start-line="319" selection-start-column="104" selection-end-line="319" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/data.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/static/css/login-signup.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="100" column="11" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/polls/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="45" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/doan/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="21" column="48" lean-forward="true" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="45" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#form#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#form#0;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#form#0;n#!!top" />
+            <element signature="n#style#0;n#label#0;n#div#6;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/doan/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="105" column="23" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="69" lean-forward="true" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/term-of-uses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/doan/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <element signature="e#628#660#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoAnChuyenNganh-master/templates/user-profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
