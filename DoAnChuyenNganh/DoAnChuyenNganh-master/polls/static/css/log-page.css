@@ -32,3 +32,58 @@ a{
     padding-bottom: 30px;
     font-size: 12px;
 }
+
+
+.customSelectOption{
+    padding-bottom: 10px;
+}
+
+select{
+    width: 100%;
+    background: #e44d3a;
+    color: #fff;
+    padding: 10px;
+    width: 250px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    -webkit-appearance: button;
+    outline: none;
+}
+
+.customSelectOption:before{
+    content: '\f358';
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 71px;
+    right: 85px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #ffffff;
+    font-size: 28px;
+    background: #ff7360;
+    border-radius: 4px;
+}
+
+.customSelectOption:hover:before{
+    background: #b23b2c;
+}
+
+.back-button{
+    position: absolute;
+    top: 23px;
+
+}
+
+.back-button a{
+    color: #e44d3a;
+    text-decoration: none;
+}
+
+.back-button a:hover{
+    color: #b23b2c;
+}

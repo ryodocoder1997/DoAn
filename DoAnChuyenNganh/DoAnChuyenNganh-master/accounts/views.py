@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from .forms import ExtendedUserCreationForm, UserProfileForm
-from django.shortcuts import render_to_response
 
 
 def home(request):
@@ -13,11 +11,6 @@ def home(request):
 
     context = {'username': username}
     return render(request, 'homepage.html', context)
-
-
-@login_required
-def profile(request):
-    return render(request, 'registration/profile.html')
 
 
 def signup(request):
@@ -35,8 +28,7 @@ def signup(request):
 
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
-            if request.POST["is_agreed"]:
-                return render_to_response('signup', message='Đăng ký thất bại! Bạn cần phải đồng ý với điều khoản của chúng tôi!')
+
             user = authenticate(username=username, password=password)
             login(request, user)
 

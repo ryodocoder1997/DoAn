@@ -13,17 +13,22 @@
 
 <!-- CSS for Log Page -->
 <link rel="stylesheet" href="{% static 'css/customized-bootstrap.css'%}">
-<link rel="stylesheet" href="{% static 'css/log-page.css'%}">
 <link rel="stylesheet" href="{% static 'css/login-signup.css'%}">
+<link rel="stylesheet" href="{% static 'css/log-page.css'%}">
 {% endblock %}
 
 <form method="POST">
     {% csrf_token %}
     <div class="container justify-content-center">
+        <div class="back-button">
+            <a href="{% url 'login' %}">
+                <i class="fas fa-arrow-left fa-2x"></i>
+            </a>
+        </div>
         <h1>Đăng Ký</h1>
         <div class="text-center customSelectOption">
             <select name="account_type" id="id_account_type">
-                <option value="A">Trung Tâm</option>
+                <option value="A">Trung tâm</option>
                 <option value="S" selected="">Học sinh</option>
                 <option value="T">Gia sư</option>
             </select>
@@ -65,10 +70,18 @@
         </div>
         <div class="customCheckbox">
             <input type="checkbox" name="is_agreed" id="id_is_agreed">
-            <label for="id_is_agreed" style="font-size: 12px;">Tôi đồng ý với <a href="term-of-uses" target="_blank">Điều khoản sử dụng</a></label>
+            <label for="id_is_agreed" style="font-size: 12px;">Tôi đồng ý với <a href="term-of-uses" target="_blank">Điều
+                khoản sử dụng</a></label>
         </div>
         <div style="padding-bottom: 10px;">
-            <button type="submit" class="btn btn-primary btn-submit font-weight-bold">Đăng Ký</button>
+            <button type="submit" id="btn-submit" name="submit" class="btn btn-primary btn-submit font-weight-bold">Đăng
+                Ký
+            </button>
+        </div>
+        <hr>
+        <div class="text-center" style="padding-bottom: 10px; font-size: 12px;">
+            <h5 style="color: grey; font-size: 14px; font-weight: bold;">HAY</h5>
+            Bạn đã có tài khoản? <a href="{% url 'login' %}">Đăng Nhập</a>
         </div>
 
     </div>

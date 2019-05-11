@@ -18,7 +18,7 @@
     <!-- BEGIN OF Navigation Bar -->
     <nav class="navbar navbar-expand-sm bg-original navbar-dark fixed-top">
         <!-- Web Logo -->
-        <a class="navbar-brand" href="homepage"><img src="{% static 'images/logo.png'%}"></a>
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png'%}"></a>
         <div class="search-bar">
             <form>
                 <input type="text" name="search" placeholder="Nhập bất cứ thứ gì bạn muốn tìm...">
@@ -35,20 +35,21 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="course-list"><i class="fas fa-certificate"></i> Khóa Học</a>
+                    <a class="nav-link" href="{% url 'course-list' %}"><i class="fas fa-certificate"></i> Khóa Học</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="tutor-list"><i class="fas fa-user-tie"></i> Gia Sư</a>
+                    <a class="nav-link" href="{% url 'tutor-list' %}"><i class="fas fa-user-tie"></i> Gia Sư</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="academy-list"><i class="fas fa-building"></i> Trung Tâm</a>
+                    <a class="nav-link" href="{% url 'academy-list' %}"><i class="fas fa-building"></i> Trung Tâm</a>
                 </li>
                 {% if user.is_authenticated %}
-                <li>
+                <li class="nav-item">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Hi {{ user.username }}!
+                        Chào {{ user.last_name }}!
                     </a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="{% url 'show_user_profile' user.username %}">Hồ sơ của tôi</a>
                         <a class="dropdown-item" href="{% url 'logout' %}">Đăng xuất</a>
                     </div>
                 </li>

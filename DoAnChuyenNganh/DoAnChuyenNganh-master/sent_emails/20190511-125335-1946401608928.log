@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: phuoc@gmail.com
+Date: Sat, 11 May 2019 05:53:35 -0000
+Message-ID: <155755401551.6304.12018432275645032743@DESKTOP-5M6SGAC>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/OA/568-ccfbf86ec2ae8e0bb642/
+
+Your username, in case you've forgotten: phuocnguyen
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

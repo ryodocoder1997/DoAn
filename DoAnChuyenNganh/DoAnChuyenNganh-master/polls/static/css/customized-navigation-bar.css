@@ -20,6 +20,7 @@
 .search-bar {
 	float: left;
 	width: 396.83px;
+	height 38px;
 }
 .search-bar form {
 	float: left;
@@ -80,4 +81,8 @@
 .btn-search:hover{
     color: #fff;
     background-color: #b23b2c;
+}
+
+.nav-item{
+    font-size: 16px;
 }

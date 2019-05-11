@@ -21,11 +21,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
-                  path('user-profile/', TemplateView.as_view(template_name='user-profile.html')),
-                  path('business/', TemplateView.as_view(template_name='business.html')),
-                  path('tutor-list', TemplateView.as_view(template_name='tutor-list.html')),
-                  path('course-list', TemplateView.as_view(template_name='course-list.html')),
-                  path('academy-list', TemplateView.as_view(template_name='academy-list.html')),
+                  path('academy/', TemplateView.as_view(template_name='academy.html')),
+                  path('tutor-list', TemplateView.as_view(template_name='tutor-list.html'), name='tutor-list'),
+                  path('course-list', TemplateView.as_view(template_name='course-list.html'), name='course-list'),
+                  path('academy-list', TemplateView.as_view(template_name='academy-list.html'), name='academy-list'),
                   path('base', TemplateView.as_view(template_name='base.html')),
                   path('homepage', TemplateView.as_view(template_name='homepage.html')),
                   path('term-of-uses', TemplateView.as_view(template_name='term-of-uses.html')),
@@ -33,5 +32,5 @@ urlpatterns = [
                   path('accounts/', include('accounts.urls')),
                   path('accounts/', include('django.contrib.auth.urls')),
                   path('', include('accounts.urls')),
-
+                  path('user_profile/', include('polls.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

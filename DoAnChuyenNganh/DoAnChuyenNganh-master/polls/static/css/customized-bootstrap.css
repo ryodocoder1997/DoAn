@@ -78,3 +78,17 @@
 .card-body{
     height: 210px;
 }
+
+.btn-primary.disabled, .btn-primary:disabled{
+    background-color: grey;
+    border-color: grey;
+}
+
+.btn-primary.disabled:hover, .btn-primary:disabled:hover{
+    background-color: grey;
+    border-color: grey;
+}
+
+.dropdown-menu{
+    margin-right: 50px;
+}

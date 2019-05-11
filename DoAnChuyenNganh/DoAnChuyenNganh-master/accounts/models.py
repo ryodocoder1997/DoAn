@@ -14,7 +14,7 @@ class UserProfile(models.Model):
                                      default='D')
 
     type = (
-        ('A', 'Trung Tâm'),
+        ('A', 'Trung tâm'),
         ('S', 'Học sinh'),
         ('T', 'Gia sư'),
     )

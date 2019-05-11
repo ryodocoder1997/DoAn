@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
 <head>
 
     {% block title %}
-    {% for userbasics in UserBasics %}
-    <title>{{userbasics.last_name}}</title>
-    {% endfor %}
+    <title>ila - Trung tâm Anh Ngữ</title>
     {% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content=""/>
@@ -21,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/customized-navigation-bar.css'%}">
 
     <!-- Cumtomized CSS -->
     <link rel="stylesheet" href="{% static 'css/customized-bootstrap.css'%}">
@@ -41,21 +39,20 @@
     <!-- Customized Footer CSS -->
     <link rel="stylesheet" href="{% static 'css/customized-footer.css'%}">
     {% endblock %}
+
 </head>
+
 
 <body>
 
 {% block content %}
 
-{% for userbasics in UserBasics %}
-{% for userinfos in UserInfos %}
-{% for contacts in Contacts %}
 <div class="style-banner"></div>
 <div class="wrapper">
 
 
     <section class="cover-sec">
-        <img src="{% static 'images/cover-img.jpg'%}" alt="">
+        <img src="{% static 'images/cover-business.jpg'%}" alt="">
     </section>
 
 
@@ -69,74 +66,40 @@
                                 <div class="user_profile">
                                     <div class="user-pro-img">
                                         <a href="">
-                                            <img src="{{userinfos.avatar.url}}" alt="">
+                                            <img src="{% static 'images/buss-pro-img.jpg'%}" alt="">
                                             <span class="user-pro-img-edit"><i class="fas fa-edit"></i> Đổi ảnh đại diện</span>
                                         </a>
                                     </div><!--user-pro-img end-->
                                     <ul class="social_links text-center">
                                         <li>
                                             <div class="post-title">
-                                                <h3 style="font-weight: bold; text-align: center;">
-                                                    {{userbasics.last_name}}</h3>
+                                                <h3 style="font-weight: bold; text-align: center;">ila</h3>
                                                 <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                         class="fas fa-edit"></i></a>
                                             </div>
                                         </li>
-                                        <li>Giới tính: {{userinfos.gender}}</li>
-                                        <li>Ngày sinh: {{userinfos.date_of_birth|date:"d/n/o"}}</li>
-                                        <li>Nghề nghiệp: {{userinfos.job}}</li>
+                                        <li>Trung tâm Anh Ngữ</li>
                                         <li>
-                                            {% if contacts.facebook|length > 0 %}
-                                            <a href="{{contacts.facebook}}" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                                            {% endif %}
-                                            {% if contacts.skype|length > 0 %}
-                                            <a href="skype:{{contacts.skype}}?call"><i class="fab fa-skype"></i></a>
-                                            {% endif %}
-                                            {% if contacts.zalo|length > 0 %}
+                                            <a href=""><i class="fab fa-facebook-square"></i></a>
+                                            <a href=""><i class="fab fa-skype"></i></a>
                                             <a href=""><img src="{% static 'images/zalo.png'%}"
                                                             style="float: none; width:17px; height: 21px;"></a>
-                                            {% endif %}
                                         </li>
                                     </ul>
                                 </div><!--user_profile end-->
-                                <div class="suggestions full-width">
-                                    <div class="sd-title">
-                                        <h3>Những gia sư khác</h3>
-                                        <i class="la la-ellipsis-v"></i>
-                                    </div><!--sd-title end-->
-
-                                    <div class="suggestions-list">
-                                        {% for suggest in Suggest %}
-                                        {% for userid, userinfo in suggest %}
-                                        <div class="suggestion-usd">
-                                            <img src="{{userinfo.avatar.url}}" alt="">
-                                            <div class="sgt-text">
-                                                <a href="{% url 'show_user_profile' userid.username %}"><h4>
-                                                    {{userid.last_name}}</h4></a>
-                                                <span>{{userinfo.job}}</span>
-                                            </div>
-                                            <span><i class="la la-plus"></i></span>
-                                        </div>
-                                        {% endfor %}
-                                        {% endfor %}
-                                        <div class="view-more">
-                                            <a href="#" title="">Xem thêm</a>
-                                        </div>
-                                    </div><!--suggestions-list end-->
-                                </div><!--suggestions end-->
                             </div><!--main-left-sidebar end-->
                         </div>
                         <div class="col-lg-9">
                             <div class="main-ws-sec">
                                 <div class="user-tab-sec">
                                     <div class="profile-name">
-                                        <h3>{{ userbasics.last_name }}</h3>
+                                        <h3>ila</h3>
                                         <div class="message-btn">
-                                            <a href="#" title=""><i class="fa fa-envelope"></i> {{userbasics.email}}</a>
+                                            <a href="#" title=""><i class="fa fa-envelope"></i> Message</a>
                                         </div>
                                     </div>
                                     <div class="star-descp">
-                                        <span>{{userinfos.job}}</span>
+                                        <span>Trung tâm Anh Ngữ</span>
                                         <ul>
                                             <li><i class="fas fa-star"></i></li>
                                             <li><i class="fas fa-star"></i></li>
@@ -153,6 +116,12 @@
                                                     <span>Giới Thiệu</span>
                                                 </a>
                                             </li>
+                                            <li data-tab="course-dd" class="animated fadeIn">
+                                                <a href="#" title="">
+                                                    <img src="{% static 'images/ic7.png'%}" alt="">
+                                                    <span>Khóa Học</span>
+                                                </a>
+                                            </li>
                                             <li data-tab="info-dd" class="animated fadeIn">
                                                 <a href="#" title="">
                                                     <img src="{% static 'images/ic2.png'%}" alt="">
@@ -162,13 +131,19 @@
                                             <li data-tab="degree-dd" class="animated fadeIn">
                                                 <a href="#" title="">
                                                     <img src="{% static 'images/ic5.png'%}" alt="">
-                                                    <span>Học Vấn</span>
+                                                    <span>Thành Tựu</span>
                                                 </a>
                                             </li>
                                             <li data-tab="typic-dd" class="animated fadeIn">
                                                 <a href="#" title="">
                                                     <img src="{% static 'images/ic3.png'%}" alt="">
                                                     <span>HS Tiêu Biểu</span>
+                                                </a>
+                                            </li>
+                                            <li data-tab="teachlist-dd" class="animated fadeIn">
+                                                <a href="#" title="">
+                                                    <img src="{% static 'images/ic1.png'%}" alt="">
+                                                    <span>Giảng viên</span>
                                                 </a>
                                             </li>
                                             <li data-tab="payment-dd" class="animated fadeIn">
@@ -183,7 +158,7 @@
                                 <div class="product-feed-tab" id="info-dd">
                                     <div class="user-profile-ov">
                                         <div class="post-title">
-                                            <h3>Lịch Dạy Gia Sư</h3>
+                                            <h3>Lịch Dạy Quen Thuộc của ila</h3>
                                             <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                     class="fas fa-edit"></i></a>
                                         </div>
@@ -193,8 +168,8 @@
                                                     <h5>Thứ 2</h5>
                                                     <div class="container">
                                                         <div class="calendar-normal">SÁNG</div>
-                                                        <div class="calendar-active">CHIỀU</div>
-                                                        <div class="calendar-normal">TỐI</div>
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        <div class="calendar-active">TỐI</div>
                                                     </div>
                                                 </div>
 
@@ -212,7 +187,7 @@
                                                     <div class="container">
                                                         <div class="calendar-normal">SÁNG</div>
                                                         <div class="calendar-normal">CHIỀU</div>
-                                                        <div class="calendar-normal">TỐI</div>
+                                                        <div class="calendar-active">TỐI</div>
                                                     </div>
                                                 </div>
 
@@ -229,17 +204,17 @@
                                                     <h5>Thứ 6</h5>
                                                     <div class="container">
                                                         <div class="calendar-normal">SÁNG</div>
-                                                        <div class="calendar-active">CHIỀU</div>
-                                                        <div class="calendar-normal">TỐI</div>
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        <div class="calendar-active">TỐI</div>
                                                     </div>
                                                 </div>
 
                                                 <div class="row-calendar">
                                                     <h5>Thứ 7</h5>
                                                     <div class="container">
-                                                        <div class="calendar-active">SÁNG</div>
+                                                        <div class="calendar-normal">SÁNG</div>
                                                         <div class="calendar-active">CHIỀU</div>
-                                                        <div class="calendar-active">TỐI</div>
+                                                        <div class="calendar-normal">TỐI</div>
                                                     </div>
                                                 </div>
 
@@ -253,7 +228,7 @@
                                                 </div>
                                                 <div>
                                                     <i class="fas fa-square fa-7x" style="color: #e44d3a"></i>
-                                                    <span>: Thời gian có thể mở lớp.</span>
+                                                    <span>: Thời gian lên lớp.</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -268,10 +243,12 @@
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
                                     </div>
-                                    <p>Tôi là một gia sư có kinh nghiệm nhiều năm trong chuyên môn giáo dục và đào
-                                        tạo</p>
-                                    <p>Các em sẽ tự tin hơn khi gặp các tình huống cần sử dụng tiếng Anh</p>
-                                    <p>Cam kết các em sẽ thành thạo tiếng Anh trong vòng 6 tháng</p>
+                                    <p>ILA là một công ty hoạt động trong lĩnh vực giáo dục và đào tạo tiếng Anh có vốn
+                                        sở hữu nước ngoài, chuyên cung cấp các chương trình học và dịch vụ bao gồm:</p>
+                                    <p>Chương trình giảng dạy Anh ngữ dành cho trẻ em và người lớn</p>
+                                    <p>Chương trình đào tạo giáo viên</p>
+                                    <p>Đào tạo doanh nghiệp</p>
+                                    <p>Trung Tâm Du Học ILA</p>
                                 </div><!--user-profile-ov end-->
 
                                 <div class="user-profile-ov">
@@ -280,10 +257,10 @@
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
                                     </div>
-                                    <p>Bạn hãy xem để biết rõ hơn về tôi</p>
+                                    <p>Bạn hãy xem để biết rõ hơn về chúng tôi</p>
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <iframe class="embed-responsive-item"
-                                                src="https://www.youtube.com/embed/73aqMpPQOcU"
+                                                src="https://www.youtube.com/embed/OZiFwhiLGuE"
                                                 allowfullscreen></iframe>
                                     </div>
                                 </div><!--user-profile-ov end-->
@@ -294,13 +271,61 @@
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
                                     </div>
-                                    <p>Điện thoại: {{contacts.phone_number}}</p>
-                                    <p>Địa chỉ: {{contacts.address}}</p>
+                                    <p>Điện thoại: 0789 456 123 - 0321 654 987</p>
+                                    <p>Địa chỉ: 4/2 đường Trường Chinh TP.HCM</p>
                                     <div class="container-fluid">
                                         <div class="map-responsive">
-                                            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q={{contacts.address}}"
+                                            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France"
                                                     width="753" height="452" frameborder="0" style="border:0"
                                                     allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div><!--user-profile-ov end-->
+                            </div><!--product-feed-tab end-->
+
+                            <div class="product-feed-tab" id="course-dd">
+                                <div class="user-profile-ov">
+                                    <div class="post-title">
+                                        <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
+                                                class="fas fa-edit"></i></a>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <img src="{% static 'images/course1.jpg'%}" class="teacher-list-img">
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <h3>Khóa học TOEIC</h3>
+                                            <p>Khóa học tiếng Anh dành chứng chỉ TOEIC.</p>
+                                        </div>
+                                    </div>
+                                </div><!--user-profile-ov end-->
+                                <div class="user-profile-ov">
+                                    <div class="post-title">
+                                        <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
+                                                class="fas fa-edit"></i></a>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <img src="{% static 'images/course7.jpg'%}" class="teacher-list-img">
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <h3>Khóa học IELTS</h3>
+                                            <p>Khóa học dành chứng chỉ IELTS.</p>
+                                        </div>
+                                    </div>
+                                </div><!--user-profile-ov end-->
+                                <div class="user-profile-ov">
+                                    <div class="post-title">
+                                        <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
+                                                class="fas fa-edit"></i></a>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <img src="{% static 'images/course8.jpg'%}" class="teacher-list-img">
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <h3>Khóa học tiếng Anh cho công việc</h3>
+                                            <p>Khóa học giao tiếp dành cho môi trường công sở</p>
                                         </div>
                                     </div>
                                 </div><!--user-profile-ov end-->
@@ -309,18 +334,19 @@
                             <div class="product-feed-tab animated fadeIn" id="typic-dd">
                                 <div class="user-profile-ov">
                                     <div class="post-title">
-                                        <h3>Những học viên tiêu biểu của tôi</h3>
+                                        <h3>Những thành tựu tiêu biểu của chúng tôi</h3>
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
                                     </div>
-                                    <p>Với hơn 12 năm kinh nghiệm giảng dạy, tôi luôn hướng dẫn học viên những chiến
-                                        lược làm bài phù hợp để các em có tâm thế vững chắc trước kì thi và đạt được kết
-                                        quả tốt như mong muốn.</p>
-                                    <p>Cho đến thời điểm hiện tại, tôi đã đào tạo được:</p>
-                                    <p>20 em đạt mốc 8.5 IELTS</p>
-                                    <p>19 em đạt mốc 8.0 IELTS</p>
-                                    <p>25 em đạt mốc 7.5 IELTS</p>
-                                    <p>30 em đạt mốc 7.0 IELTS</p>
+                                    <p>Trở thành người dẫn đầu trong lĩnh vực giáo dục và đào tạo với cam kết mang đến
+                                        những trải nghiệm học tập quý giá, nhằm giúp học viên khám phá bản thân, thay
+                                        đổi tầm nhìn và đạt được những thành công trong cuộc sống.</p>
+                                    <p>Thành tựu hiện tại:</p>
+                                    <p>700 Giáo viên bản ngữ</p>
+                                    <p>27.000 học viên đã học năm trước</p>
+                                    <p>18 năm kinh nghiệm và chuyên môn</p>
+                                    <p>42 trung tâm tại 11 thành phố</p>
+                                    <p>300.000 học viên đã học tại ila</p>
 
                                 </div><!--user-profile-ov end-->
                             </div><!--product-feed-tab end-->
@@ -328,55 +354,78 @@
                             <div class="product-feed-tab" id="degree-dd">
                                 <div class="user-profile-ov">
                                     <div class="post-title">
-                                        <h3>Bằng Cử nhân Đại Học Hoa Sen</h3>
+                                        <h3>Những thành tựu của chúng tôi</h3>
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-7"><a href="{% static 'images/degree1.jpg'%}"
+                                        <div class="col-lg-7"><a href="{% static 'images/degree3.jpg'%}"
                                                                  data-toggle="lightbox"
                                                                  data-gallery="img-gallery">
-                                            <img alt="" src="{% static 'images/degree1.jpg'%}"
+                                            <img alt="" src="{% static 'images/degree3.jpg'%}"
                                                  class="img-fluid img-thumbnail"></a>
                                         </div>
                                         <div class="col-lg-5">
-                                            <h3>Bằng Cử nhân Đại Học Hoa Sen</h3>
-                                            <p>Thời gian đào tạo: 09/2012 - 06/2016</p>
-                                            <p>Trường: Đại học Hoa Sen</p>
-                                            <p>Quốc gia cấp bằng: Việt Nam</p>
-                                            <p>Bậc đào tạo: Cử nhân Anh Văn</p>
-                                            <p>Điểm trung bình: 8.8</p>
-                                            <p>Xếp loại: Giỏi</p>
+                                            <h3>Most favourite School</h3>
+                                            <p>Thời gian: 2011 - 2012</p>
+                                            <p>Được cấp bởi: Golden Enterprise</p>
+                                        </div>
+                                    </div>
+                                </div><!--user-profile-ov end-->
+                            </div><!--product-feed-tab end-->
+
+                            <div class="product-feed-tab" id="teachlist-dd">
+                                <div class="user-profile-ov">
+                                    <div class="post-title">
+                                        <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
+                                                class="fas fa-edit"></i></a>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <img src="{% static 'images/giasu1.jpg'%}" class="teacher-list-img">
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <h3>Marry Sallin</h3>
+                                            <p>Kinh nghiệm giảng dạy: 3 năm</p>
+                                            <p>Nhiệt huyết, Năng động, Hòa đồng</p>
                                         </div>
                                     </div>
                                 </div><!--user-profile-ov end-->
                                 <div class="user-profile-ov">
                                     <div class="post-title">
-                                        <h3>Bằng Thạc sĩ Đại Học Hoa Sen</h3>
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
                                     </div>
-
                                     <div class="row">
-                                        <div class="col-lg-7"><a href="{% static 'images/degree2.jpg'%}"
-                                                                 data-toggle="lightbox"
-                                                                 data-gallery="img-gallery">
-                                            <img alt="" src="{% static 'images/degree2.jpg'%}"
-                                                 class="img-fluid img-thumbnail"></a>
+                                        <div class="col-lg-3">
+                                            <img src="{% static 'images/giasu2.jpg'%}" class="teacher-list-img">
                                         </div>
-                                        <div class="col-lg-5">
-                                            <h3>Bằng Thạc sĩ Đại Học Hoa Sen</h3>
-                                            <p>Thời gian đào tạo: 07/2016 - 06/2020</p>
-                                            <p>Trường: Đại học Hoa Sen</p>
-                                            <p>Quốc gia cấp bằng: Việt Nam</p>
-                                            <p>Bậc đào tạo: Thạc sĩ Anh Văn</p>
-                                            <p>Điểm trung bình: 8.5</p>
-                                            <p>Xếp loại: Giỏi</p>
+                                        <div class="col-lg-9">
+                                            <h3>Susie Carmy</h3>
+                                            <p>Kinh nghiệm giảng dạy: 5 năm</p>
+                                            <p>Nhiệt huyết, Năng động, Hòa đồng</p>
+                                        </div>
+                                    </div>
+                                </div><!--user-profile-ov end-->
+                                <div class="user-profile-ov">
+                                    <div class="post-title">
+                                        <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
+                                                class="fas fa-edit"></i></a>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <img src="{% static 'images/giasu3.jpg'%}" class="teacher-list-img">
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <h3>John Paul</h3>
+                                            <p>Kinh nghiệm giảng dạy: 7 năm</p>
+                                            <p>Nhiệt huyết, Năng động, Hòa đồng</p>
                                         </div>
                                     </div>
                                 </div><!--user-profile-ov end-->
                             </div><!--product-feed-tab end-->
+
                             <div class="product-feed-tab animated fadeIn" id="payment-dd">
                                 <div class="billing-method">
                                     <ul>
@@ -497,10 +546,6 @@
 
 
 </div><!--theme-layout end-->
-{% endfor %}
-{% endfor %}
-{% endfor %}
-
 {% endblock %}
 
 {% block scripts %}
@@ -519,8 +564,8 @@
       });
 
 
-
-
 </script>
 {% endblock %}
 </body>
+
+
