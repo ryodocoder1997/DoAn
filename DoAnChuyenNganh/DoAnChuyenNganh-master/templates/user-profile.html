@@ -46,11 +46,8 @@
 <body>
 
 {% block content %}
-
-{% for userbasics in UserBasics %}
-{% for userinfos in UserInfos %}
-{% for contacts in Contacts %}
 <div class="style-banner"></div>
+{% for item in user_type %}
 <div class="wrapper">
 
 
@@ -67,6 +64,8 @@
                         <div class="col-lg-3">
                             <div class="main-left-sidebar">
                                 <div class="user_profile">
+                                    {% for userbasics in UserBasics %}
+                                    {% for userinfos in UserInfos %}
                                     <div class="user-pro-img">
                                         <a href="">
                                             <img src="{{userinfos.avatar.url}}" alt="">
@@ -77,36 +76,63 @@
                                         <li>
                                             <div class="post-title">
                                                 <h3 style="font-weight: bold; text-align: center;">
-                                                    {{userbasics.last_name}}</h3>
+                                                    {{userbasics.last_name}}
+                                                </h3>
+                                                {% if user.username == userbasics.username %}
                                                 <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                         class="fas fa-edit"></i></a>
+                                                {% endif %}
                                             </div>
                                         </li>
+                                        {% if item.account_type == 'T' %}
                                         <li>Giới tính: {{userinfos.gender}}</li>
                                         <li>Ngày sinh: {{userinfos.date_of_birth|date:"d/n/o"}}</li>
                                         <li>Nghề nghiệp: {{userinfos.job}}</li>
+                                        {% elif item.account_type == 'A' %}
+                                        <li>{{userinfos.job}}</li>
+                                        {% endif %}
+                                        {% empty %}
+                                        <div class="text-center" style="color: #bababa">
+                                            Bạn chưa có Thông tin của mình, nhấn vào <a href="">đây</a> để
+                                            thêm.
+                                        </div>
+                                        {% endfor %}
+                                        {% for contacts in Contacts %}
                                         <li>
+
                                             {% if contacts.facebook|length > 0 %}
-                                            <a href="{{contacts.facebook}}" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                                            <a href="{{contacts.facebook}}" target="_blank"><i
+                                                    class="fab fa-facebook-square"></i></a>
                                             {% endif %}
                                             {% if contacts.skype|length > 0 %}
                                             <a href="skype:{{contacts.skype}}?call"><i class="fab fa-skype"></i></a>
                                             {% endif %}
                                             {% if contacts.zalo|length > 0 %}
-                                            <a href=""><img src="{% static 'images/zalo.png'%}"
-                                                            style="float: none; width:17px; height: 21px;"></a>
+                                            <a href="{{contacts.zalo}}" target="_blank"><img
+                                                    src="{% static 'images/zalo.png'%}"
+                                                    style="float: none; width:17px; height: 21px;"></a>
                                             {% endif %}
                                         </li>
+                                        {% endfor %}
                                     </ul>
+                                    {% endfor %}
                                 </div><!--user_profile end-->
                                 <div class="suggestions full-width">
                                     <div class="sd-title">
+                                        {% for item in user_type %}
+                                        {% if item.account_type == 'T' %}
                                         <h3>Những gia sư khác</h3>
+                                        {% elif item.account_type == 'A' %}
+                                        <h3>Những trung tâm khác</h3>
+                                        {% endif %}
+                                        {% endfor %}
                                         <i class="la la-ellipsis-v"></i>
                                     </div><!--sd-title end-->
 
                                     <div class="suggestions-list">
-                                        {% for suggest in Suggest %}
+                                        {% for item in user_type %}
+                                        {% if item.account_type == 'T' %}
+                                        {% for suggest in TutorSuggest %}
                                         {% for userid, userinfo in suggest %}
                                         <div class="suggestion-usd">
                                             <img src="{{userinfo.avatar.url}}" alt="">
@@ -119,6 +145,22 @@
                                         </div>
                                         {% endfor %}
                                         {% endfor %}
+                                        {% elif item.account_type == 'A' %}
+                                        {% for suggest in AcademySuggest %}
+                                        {% for userid, userinfo in suggest %}
+                                        <div class="suggestion-usd">
+                                            <img src="{{userinfo.avatar.url}}" alt="">
+                                            <div class="sgt-text">
+                                                <a href="{% url 'show_user_profile' userid.username %}"><h4>
+                                                    {{userid.last_name}}</h4></a>
+                                                <span>{{userinfo.job}}</span>
+                                            </div>
+                                            <span><i class="la la-plus"></i></span>
+                                        </div>
+                                        {% endfor %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endfor %}
                                         <div class="view-more">
                                             <a href="#" title="">Xem thêm</a>
                                         </div>
@@ -130,13 +172,17 @@
                             <div class="main-ws-sec">
                                 <div class="user-tab-sec">
                                     <div class="profile-name">
+                                        {% for userbasics in UserBasics %}
                                         <h3>{{ userbasics.last_name }}</h3>
                                         <div class="message-btn">
                                             <a href="#" title=""><i class="fa fa-envelope"></i> {{userbasics.email}}</a>
                                         </div>
+                                        {% endfor %}
                                     </div>
                                     <div class="star-descp">
+                                        {% for userinfos in UserInfos %}
                                         <span>{{userinfos.job}}</span>
+                                        {% endfor %}
                                         <ul>
                                             <li><i class="fas fa-star"></i></li>
                                             <li><i class="fas fa-star"></i></li>
@@ -153,104 +199,243 @@
                                                     <span>Giới Thiệu</span>
                                                 </a>
                                             </li>
+                                            {% for item in user_type %}
+                                            {% if item.account_type == 'A' %}
+                                            <li data-tab="course-dd" class="animated fadeIn">
+                                                <a href="#" title="">
+                                                    <img src="{% static 'images/ic7.png'%}" alt="">
+                                                    <span>Khóa Học</span>
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                            {% endfor %}
                                             <li data-tab="info-dd" class="animated fadeIn">
                                                 <a href="#" title="">
                                                     <img src="{% static 'images/ic2.png'%}" alt="">
                                                     <span>Lịch Dạy</span>
                                                 </a>
                                             </li>
+                                            {% for item in user_type %}
+                                            {% if item.account_type == 'T' %}
                                             <li data-tab="degree-dd" class="animated fadeIn">
                                                 <a href="#" title="">
                                                     <img src="{% static 'images/ic5.png'%}" alt="">
                                                     <span>Học Vấn</span>
                                                 </a>
                                             </li>
+                                            {% elif item.account_type == 'A' %}
+                                            <li data-tab="degree-dd" class="animated fadeIn">
+                                                <a href="#" title="">
+                                                    <img src="{% static 'images/ic5.png'%}" alt="">
+                                                    <span>Thành Tựu</span>
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                            {% endfor %}
+                                            {% for item in user_type %}
+                                            {% if item.account_type == 'T' %}
                                             <li data-tab="typic-dd" class="animated fadeIn">
                                                 <a href="#" title="">
                                                     <img src="{% static 'images/ic3.png'%}" alt="">
                                                     <span>HS Tiêu Biểu</span>
                                                 </a>
                                             </li>
+                                            {% elif item.account_type == 'A' %}
+                                            <li data-tab="typic-dd" class="animated fadeIn">
+                                                <a href="#" title="">
+                                                    <img src="{% static 'images/ic3.png'%}" alt="">
+                                                    <span>Tiêu Biểu</span>
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                            {% endfor %}
+                                            {% for item in user_type %}
+                                            {% if item.account_type == 'A' %}
+                                            <li data-tab="teachlist-dd" class="animated fadeIn">
+                                                <a href="#" title="">
+                                                    <img src="{% static 'images/ic1.png'%}" alt="">
+                                                    <span>Giảng Viên</span>
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                            {% endfor %}
                                             <li data-tab="payment-dd" class="animated fadeIn">
                                                 <a href="#" title="">
                                                     <img src="{% static 'images/ic6.png'%}" alt="">
-                                                    <span>Nâng cấp</span>
+                                                    <span>Nâng Cấp</span>
                                                 </a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div><!--user-tab-sec end-->
+                                {% for item in user_type %}
+                                {% if item.account_type == 'T' %}
                                 <div class="product-feed-tab" id="info-dd">
                                     <div class="user-profile-ov">
                                         <div class="post-title">
                                             <h3>Lịch Dạy Gia Sư</h3>
+                                            {% for userbasics in UserBasics %}
+                                            {% if user.username == userbasics.username %}
                                             <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                     class="fas fa-edit"></i></a>
+                                            {% endif %}
+                                            {% endfor %}
                                         </div>
                                         <div class="gblock-v2">
                                             <div class="body-block block-calendar">
+                                                {% for schedules in Schedules %}
                                                 <div class="row-calendar">
                                                     <h5>Thứ 2</h5>
                                                     <div class="container">
+                                                        {% if schedules.monday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.monday_afternoon == True %}
                                                         <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.monday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
 
                                                 <div class="row-calendar">
                                                     <h5>Thứ 3</h5>
                                                     <div class="container">
+                                                        {% if schedules.tuesday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.tuesday_afternoon == True %}
                                                         <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.tuesday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
 
                                                 <div class="row-calendar">
                                                     <h5>Thứ 4</h5>
                                                     <div class="container">
+                                                        {% if schedules.wednesday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.wednesday_afternoon == True %}
+                                                        <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.wednesday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
 
                                                 <div class="row-calendar">
                                                     <h5>Thứ 5</h5>
                                                     <div class="container">
+                                                        {% if schedules.thursday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.thursday_afternoon == True %}
                                                         <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.thursday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
 
                                                 <div class="row-calendar">
                                                     <h5>Thứ 6</h5>
                                                     <div class="container">
+                                                        {% if schedules.friday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.friday_afternoon == True %}
                                                         <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.friday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
                                                         <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
 
                                                 <div class="row-calendar">
                                                     <h5>Thứ 7</h5>
                                                     <div class="container">
+                                                        {% if schedules.saturday_day == True %}
                                                         <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.saturday_afternoon == True %}
                                                         <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.saturday_night == True %}
                                                         <div class="calendar-active">TỐI</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
 
                                                 <div class="row-calendar">
                                                     <h5>Chủ Nhật</h5>
                                                     <div class="container">
+                                                        {% if schedules.sunday_day == True %}
                                                         <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.sunday_afternoon == True %}
                                                         <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.sunday_night == True %}
                                                         <div class="calendar-active">TỐI</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
+                                                {% empty %}
+                                                <div class="text-center" style="color: #bababa">
+                                                    Bạn chưa có Lịch dạy của mình, nhấn vào <a href="">đây</a> để
+                                                    thêm.
+                                                </div>
+                                                {% endfor %}
                                                 <div>
                                                     <i class="fas fa-square fa-7x" style="color: #e44d3a"></i>
                                                     <span>: Thời gian có thể mở lớp.</span>
@@ -260,40 +445,241 @@
                                     </div>
 
                                 </div><!--user-profile-ov end-->
+                                {% elif item.account_type == 'A' %}
+                                <div class="product-feed-tab" id="info-dd">
+                                    <div class="user-profile-ov">
+                                        <div class="post-title">
+                                            <h3>Lịch Dạy Trung Tâm</h3>
+                                            {% for userbasics in UserBasics %}
+                                            {% if user.username == userbasics.username %}
+                                            <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
+                                                    class="fas fa-edit"></i></a>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        <div class="gblock-v2">
+                                            <div class="body-block block-calendar">
+                                                {% for schedules in Schedules %}
+                                                <div class="row-calendar">
+                                                    <h5>Thứ 2</h5>
+                                                    <div class="container">
+                                                        {% if schedules.monday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.monday_afternoon == True %}
+                                                        <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.monday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+
+                                                <div class="row-calendar">
+                                                    <h5>Thứ 3</h5>
+                                                    <div class="container">
+                                                        {% if schedules.tuesday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.tuesday_afternoon == True %}
+                                                        <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.tuesday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+
+                                                <div class="row-calendar">
+                                                    <h5>Thứ 4</h5>
+                                                    <div class="container">
+                                                        {% if schedules.wednesday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.wednesday_afternoon == True %}
+                                                        <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.wednesday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+
+                                                <div class="row-calendar">
+                                                    <h5>Thứ 5</h5>
+                                                    <div class="container">
+                                                        {% if schedules.thursday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.thursday_afternoon == True %}
+                                                        <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.thursday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+
+                                                <div class="row-calendar">
+                                                    <h5>Thứ 6</h5>
+                                                    <div class="container">
+                                                        {% if schedules.friday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.friday_afternoon == True %}
+                                                        <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.friday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+
+                                                <div class="row-calendar">
+                                                    <h5>Thứ 7</h5>
+                                                    <div class="container">
+                                                        {% if schedules.saturday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.saturday_afternoon == True %}
+                                                        <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.saturday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+
+                                                <div class="row-calendar">
+                                                    <h5>Chủ Nhật</h5>
+                                                    <div class="container">
+                                                        {% if schedules.sunday_day == True %}
+                                                        <div class="calendar-active">SÁNG</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">SÁNG</div>
+                                                        {% endif %}
+                                                        {% if schedules.sunday_afternoon == True %}
+                                                        <div class="calendar-active">CHIỀU</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">CHIỀU</div>
+                                                        {% endif %}
+                                                        {% if schedules.sunday_night == True %}
+                                                        <div class="calendar-active">TỐI</div>
+                                                        {% else %}
+                                                        <div class="calendar-normal">TỐI</div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                                {% empty %}
+                                                <div class="text-center" style="color: #bababa">
+                                                    Bạn chưa có Lịch dạy của mình, nhấn vào <a href="">đây</a> để
+                                                    thêm.
+                                                </div>
+                                                {% endfor %}
+                                                <div>
+                                                    <br>
+                                                    <i class="fas fa-square fa-7x" style="color: #e44d3a"></i>
+                                                    <span>: Thời gian có thể mở lớp.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div><!--user-profile-ov end-->
+                                {% endif %}
+                                {% endfor %}
                             </div><!--product-feed-tab end-->
                             <div class="product-feed-tab animated fadeIn current" id="intro-dd">
                                 <div class="user-profile-ov">
                                     <div class="post-title">
                                         <h3>Giới thiệu bản thân</h3>
+                                        {% for userbasics in UserBasics %}
+                                        {% if user.username == userbasics.username %}
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
+                                        {% endif %}
+                                        {% endfor %}
                                     </div>
-                                    <p>Tôi là một gia sư có kinh nghiệm nhiều năm trong chuyên môn giáo dục và đào
-                                        tạo</p>
-                                    <p>Các em sẽ tự tin hơn khi gặp các tình huống cần sử dụng tiếng Anh</p>
-                                    <p>Cam kết các em sẽ thành thạo tiếng Anh trong vòng 6 tháng</p>
+                                    {% for introductions in Introductions %}
+                                    <p>{{introductions.description|linebreaks}}</p>
+                                    {% empty %}
+                                    <div class="text-center" style="color: #bababa">
+                                        Bạn chưa có lời giới thiệu nào, nhấn vào <a href="">đây</a> để thêm.
+                                    </div>
+                                    {% endfor %}
                                 </div><!--user-profile-ov end-->
 
                                 <div class="user-profile-ov">
                                     <div class="post-title">
                                         <h3>Video giới thiệu</h3>
+                                        {% for userbasics in UserBasics %}
+                                        {% if user.username == userbasics.username %}
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
+                                        {% endif %}
+                                        {% endfor %}
                                     </div>
                                     <p>Bạn hãy xem để biết rõ hơn về tôi</p>
+                                    {% for videos in Videos %}
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <iframe class="embed-responsive-item"
-                                                src="https://www.youtube.com/embed/73aqMpPQOcU"
+                                                src="https://www.youtube.com/embed/{{videos.video_url}}"
                                                 allowfullscreen></iframe>
                                     </div>
+                                    {% empty %}
+                                    <div class="text-center" style="color: #bababa">
+                                        Bạn chưa có Video giới thiệu nào, nhấn vào <a href="">đây</a> để thêm.
+                                    </div>
+                                    {% endfor %}
                                 </div><!--user-profile-ov end-->
 
                                 <div class="user-profile-ov">
                                     <div class="post-title">
                                         <h3>Thông tin liên hệ</h3>
+                                        {% for userbasics in UserBasics %}
+                                        {% if user.username == userbasics.username %}
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
+                                        {% endif %}
+                                        {% endfor %}
                                     </div>
+                                    {% for contacts in Contacts %}
                                     <p>Điện thoại: {{contacts.phone_number}}</p>
                                     <p>Địa chỉ: {{contacts.address}}</p>
                                     <div class="container-fluid">
@@ -303,80 +689,154 @@
                                                     allowfullscreen></iframe>
                                         </div>
                                     </div>
+                                    {% empty %}
+                                    <div class="text-center" style="color: #bababa">
+                                        Bạn chưa có thông tin liên lạc nào, nhấn vào <a href="">đây</a> để thêm.
+                                    </div>
+                                    {% endfor %}
                                 </div><!--user-profile-ov end-->
                             </div><!--product-feed-tab end-->
-
+                            {% for item in user_type %}
+                            {% if item.account_type == 'A' %}
+                            <div class="product-feed-tab" id="course-dd">
+                                {% for classes in Classes %}
+                                <div class="user-profile-ov">
+                                    <div class="post-title">
+                                        {% for userbasics in UserBasics %}
+                                        {% if user.username == userbasics.username %}
+                                        <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
+                                                class="fas fa-edit"></i></a>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <img src="{{classes.thumbnail.url}}" class="teacher-list-img">
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <h3>{{classes.course_name}}</h3>
+                                            <p>{{classes.description|linebreaks}}</p>
+                                        </div>
+                                    </div>
+                                </div><!--user-profile-ov end-->
+                                {% empty %}
+                                <div class="user-profile-ov text-center" style="color: #bababa">
+                                    <div class="post-title">
+                                        {% for userbasics in UserBasics %}
+                                        {% if user.username == userbasics.username %}
+                                        <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
+                                                class="fas fa-edit"></i></a>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    Bạn chưa có Khóa học nào, nhấn vào <a href="">đây</a> để thêm.
+                                </div>
+                                {% endfor %}
+                            </div><!--product-feed-tab end-->
+                            {% endif %}
+                            {% endfor %}
                             <div class="product-feed-tab animated fadeIn" id="typic-dd">
                                 <div class="user-profile-ov">
                                     <div class="post-title">
+                                        {% for item in user_type %}
+                                        {% if item.account_type == 'T' %}
                                         <h3>Những học viên tiêu biểu của tôi</h3>
+                                        {% elif item.account_type == 'A' %}
+                                        <h3>Những thành tựu tiêu biểu của chúng tôi</h3>
+                                        {% endif %}
+                                        {% endfor %}
+
+                                        {% for userbasics in UserBasics %}
+                                        {% if user.username == userbasics.username %}
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
+                                        {% endif %}
+                                        {% endfor %}
                                     </div>
-                                    <p>Với hơn 12 năm kinh nghiệm giảng dạy, tôi luôn hướng dẫn học viên những chiến
-                                        lược làm bài phù hợp để các em có tâm thế vững chắc trước kì thi và đạt được kết
-                                        quả tốt như mong muốn.</p>
-                                    <p>Cho đến thời điểm hiện tại, tôi đã đào tạo được:</p>
-                                    <p>20 em đạt mốc 8.5 IELTS</p>
-                                    <p>19 em đạt mốc 8.0 IELTS</p>
-                                    <p>25 em đạt mốc 7.5 IELTS</p>
-                                    <p>30 em đạt mốc 7.0 IELTS</p>
+                                    {% for typicals in Typicals %}
+                                    <p>{{typicals.content|linebreaks}}</p>
+                                    {% empty %}
+                                    <div class="text-center" style="color: #bababa">
+                                        Bạn chưa có những Tiêu biểu của mình, nhấn vào <a href="">đây</a> để
+                                        thêm.
+                                    </div>
+                                    {% endfor %}
 
                                 </div><!--user-profile-ov end-->
                             </div><!--product-feed-tab end-->
 
                             <div class="product-feed-tab" id="degree-dd">
+                                {% for processes in StudyProcesses %}
                                 <div class="user-profile-ov">
                                     <div class="post-title">
-                                        <h3>Bằng Cử nhân Đại Học Hoa Sen</h3>
+                                        <h3>{{processes.qualification}}</h3>
+                                        {% for userbasics in UserBasics %}
+                                        {% if user.username == userbasics.username %}
                                         <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
                                                 class="fas fa-edit"></i></a>
+                                        {% endif %}
+                                        {% endfor %}
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-7"><a href="{% static 'images/degree1.jpg'%}"
+                                        <div class="col-lg-7"><a href="{{processes.certificate.url}}"
                                                                  data-toggle="lightbox"
                                                                  data-gallery="img-gallery">
-                                            <img alt="" src="{% static 'images/degree1.jpg'%}"
+                                            <img alt="" src="{{processes.certificate.url}}"
                                                  class="img-fluid img-thumbnail"></a>
                                         </div>
                                         <div class="col-lg-5">
-                                            <h3>Bằng Cử nhân Đại Học Hoa Sen</h3>
-                                            <p>Thời gian đào tạo: 09/2012 - 06/2016</p>
-                                            <p>Trường: Đại học Hoa Sen</p>
-                                            <p>Quốc gia cấp bằng: Việt Nam</p>
-                                            <p>Bậc đào tạo: Cử nhân Anh Văn</p>
-                                            <p>Điểm trung bình: 8.8</p>
-                                            <p>Xếp loại: Giỏi</p>
+                                            <h3>{{processes.qualification}}</h3>
+                                            <p>Thời gian bắt đầu: {{processes.training_time_start|date:"d/n/o"}}</p>
+                                            <p>Trường: {{processes.training_center}}</p>
+                                            <p>Quốc gia cấp bằng: {{processes.country}}</p>
+                                            <p>Bậc đào tạo: {{processes.education_level}}</p>
+                                            <p>Điểm trung bình: {{processes.gpa}}</p>
+                                            <p>Xếp loại: {{processes.classification}}</p>
                                         </div>
                                     </div>
                                 </div><!--user-profile-ov end-->
-                                <div class="user-profile-ov">
-                                    <div class="post-title">
-                                        <h3>Bằng Thạc sĩ Đại Học Hoa Sen</h3>
-                                        <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
-                                                class="fas fa-edit"></i></a>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-7"><a href="{% static 'images/degree2.jpg'%}"
-                                                                 data-toggle="lightbox"
-                                                                 data-gallery="img-gallery">
-                                            <img alt="" src="{% static 'images/degree2.jpg'%}"
-                                                 class="img-fluid img-thumbnail"></a>
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <h3>Bằng Thạc sĩ Đại Học Hoa Sen</h3>
-                                            <p>Thời gian đào tạo: 07/2016 - 06/2020</p>
-                                            <p>Trường: Đại học Hoa Sen</p>
-                                            <p>Quốc gia cấp bằng: Việt Nam</p>
-                                            <p>Bậc đào tạo: Thạc sĩ Anh Văn</p>
-                                            <p>Điểm trung bình: 8.5</p>
-                                            <p>Xếp loại: Giỏi</p>
-                                        </div>
-                                    </div>
-                                </div><!--user-profile-ov end-->
+                                {% empty %}
+                                <div class="text-center" style="color: #bababa">
+                                    Bạn chưa có những Thành tựu của mình, nhấn vào <a href="">đây</a> để
+                                    thêm.
+                                </div>
+                                {% endfor %}
                             </div><!--product-feed-tab end-->
+
+                            {% for item in user_type %}
+                            {% if item.account_type == 'A' %}
+                            <div class="product-feed-tab" id="teachlist-dd">
+                                {% for teachers in Teachers %}
+                                <div class="user-profile-ov">
+                                    <div class="post-title">
+                                        {% for userbasics in UserBasics %}
+                                        {% if user.username == userbasics.username %}
+                                        <a href="" class="btn-edit" data-toggle="tooltip" title="Chỉnh sửa"><i
+                                                class="fas fa-edit"></i></a>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <img src="{{teachers.avatar.url}}" class="teacher-list-img">
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <h3>{{teachers.full_name}}</h3>
+                                            <p>{{teachers.description|linebreaks}}</p>
+                                        </div>
+                                    </div>
+                                </div><!--user-profile-ov end-->
+                                {% empty %}
+                                <div class="text-center" style="color: #bababa">
+                                    Bạn chưa có Giảng Viên, nhấn vào <a href="">đây</a> để
+                                    thêm.
+                                </div>
+                                {% endfor %}
+                            </div><!--product-feed-tab end-->
+                            {% endif %}
+                            {% endfor %}
+
                             <div class="product-feed-tab animated fadeIn" id="payment-dd">
                                 <div class="billing-method">
                                     <ul>
@@ -498,9 +958,6 @@
 
 </div><!--theme-layout end-->
 {% endfor %}
-{% endfor %}
-{% endfor %}
-
 {% endblock %}
 
 {% block scripts %}
@@ -517,6 +974,39 @@
         event.preventDefault();
         $(this).ekkoLightbox();
       });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

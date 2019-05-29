@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import ExtendedUserCreationForm, UserProfileForm
+from django.apps import apps
+from .models import UserProfile
+from django.contrib.auth.models import User
 
 
 def home(request):
@@ -8,8 +11,23 @@ def home(request):
         username = request.user.username
     else:
         username = 'not logged in'
+    user_information = apps.get_model('polls', 'UserInfo')
+    user_tutor = UserProfile.objects.filter(account_type='T')
+    user_academy = UserProfile.objects.filter(account_type='A')
 
-    context = {'username': username}
+    userTutor = []
+    for tutor in user_tutor:
+        tutorName = User.objects.filter(username=tutor)
+        tutorInfo = user_information.objects.filter(username__user__username=tutor)
+        userTutor.append(tutorInfo)
+
+    userAcademy = []
+    for academy in user_academy:
+        academyName = User.objects.filter(username=academy)
+        academyrInfo = user_information.objects.filter(username__user__username=academy)
+        userAcademy.append(academyrInfo)
+
+    context = {'username': username, 'tutor': userTutor, 'academy': userAcademy, 'tutorName': tutorName, 'academyName': academyName}
     return render(request, 'homepage.html', context)
 
 

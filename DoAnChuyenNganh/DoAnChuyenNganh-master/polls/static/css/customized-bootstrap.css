@@ -92,3 +92,12 @@
 .dropdown-menu{
     margin-right: 50px;
 }
+
+.style-banner-down{
+    background-image: linear-gradient(-90deg, #e44d3a, yellow);
+}
+
+.term-content{
+    left: 20%;
+    background-color: #fff;
+}

@@ -1,0 +1,942 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}
+    <title>Danh Sách Gia Sư</title>
+    {% endblock %}
+
+    {% block styles %}
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!--<link rel="stylesheet" href="/static/css/teacher.css">-->
+    <link rel="stylesheet" href="{% static 'css/customized-list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login-signup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/customized-navigation-bar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/customized-footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Cumtomized CSS -->
+    <link rel="stylesheet" href="{% static 'css/customized-bootstrap.css' %}">
+
+    <!-- Customized Footer CSS -->
+    <link rel="stylesheet" href="{% static 'css/customized-footer.css'%}">
+    {% endblock %}
+</head>
+
+
+<body style="background-color: #f2f2f2">
+{% block content %}
+<section class="home-category">
+    <div class="container" style="padding-top:50px;">
+        <div class="region region-content">
+            <div id="block-system-main" class="block block-system">
+
+
+                <div class="C">
+                    <div class="main-wrapper">
+                        <div class="view view-users view-id-users view-display-id-page_2 col-popover view-dom-id-5680190255ab07e96a03ed583ee83de8">
+
+                            <div class="content-category fixed">
+                                <div class="view-user-page2-view-header">
+                                    <span>Danh sách gia sư</span>
+                                </div>
+                                <div class="container">
+                                    <!--filter-->
+                                    <div class="bg-gradient-pink" style="padding:0 10px;">
+                                        <div class="view-filters box-search">
+                                            <form action="/teacher" method="get" id="views-exposed-form-users-page-2"
+                                                  accept-charset="UTF-8">
+                                                <div style="text-align:center;">
+                                                    <div class="views-exposed-form">
+                                                        <div class="views-exposed-widgets clearfix">
+                                                            <div id="edit-place-wrapper"
+                                                                 class="views-exposed-widget views-widget-filter-field_place_tid">
+                                                                <div class="views-widget">
+                                                                    <div class="form-item form-type-select form-item-place">
+                                                                        <select id="edit-place" name="place"
+                                                                                class="form-select">
+                                                                            <option value="All" selected="selected">
+                                                                                -Chọn địa điểm -
+                                                                            </option>
+                                                                            <optgroup label="Địa điểm phổ biến">
+                                                                                <option value="1">Hà Nội</option>
+                                                                                <option value="2">TP. HCM</option>
+                                                                                <option value="10">Hải Phòng</option>
+                                                                                <option value="3">Đà Nẵng</option>
+                                                                                <option value="11">Cần Thơ</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Tỉnh, thành phố khác">
+                                                                                <option value="17">An Giang</option>
+                                                                                <option value="18">Bà Rịa-Vũng Tàu
+                                                                                </option>
+                                                                                <option value="21">Bắc Giang</option>
+                                                                                <option value="20">Bắc Kạn</option>
+                                                                                <option value="19">Bạc Liêu</option>
+                                                                                <option value="22">Bắc Ninh</option>
+                                                                                <option value="23">Bến Tre</option>
+                                                                                <option value="14">Bình Dương</option>
+                                                                                <option value="25">Bình Phước</option>
+                                                                                <option value="26">Bình Thuận</option>
+                                                                                <option value="24">Bình Định</option>
+                                                                                <option value="27">Cà Mau</option>
+                                                                                <option value="28">Cao Bằng</option>
+                                                                                <option value="29">Đắk Lắk</option>
+                                                                                <option value="30">Đắk Nông</option>
+                                                                                <option value="31">Điện Biên</option>
+                                                                                <option value="13">Đồng Nai</option>
+                                                                                <option value="32">Đồng Tháp</option>
+                                                                                <option value="33">Gia Lai</option>
+                                                                                <option value="34">Hà Giang</option>
+                                                                                <option value="35">Hà Nam</option>
+                                                                                <option value="36">Hà Tây cũ (Hà Nội)
+                                                                                </option>
+                                                                                <option value="37">Hà Tĩnh</option>
+                                                                                <option value="38">Hải Dương</option>
+                                                                                <option value="40">Hậu Giang</option>
+                                                                                <option value="39">Hòa Bình</option>
+                                                                                <option value="12">Huế</option>
+                                                                                <option value="41">Hưng Yên</option>
+                                                                                <option value="42">Khánh Hòa</option>
+                                                                                <option value="43">Kiên Giang</option>
+                                                                                <option value="44">Kon Tum</option>
+                                                                                <option value="45">Lai Châu</option>
+                                                                                <option value="48">Lâm Đồng</option>
+                                                                                <option value="47">Lạng Sơn</option>
+                                                                                <option value="46">Lào Cai</option>
+                                                                                <option value="49">Long An</option>
+                                                                                <option value="50">Nam Định</option>
+                                                                                <option value="51">Ninh Bình</option>
+                                                                                <option value="52">Ninh Thuận</option>
+                                                                                <option value="16">Nghệ An</option>
+                                                                                <option value="53">Phú Thọ</option>
+                                                                                <option value="54">Phú Yên</option>
+                                                                                <option value="55">Quảng Bình</option>
+                                                                                <option value="56">Quảng Nam</option>
+                                                                                <option value="57">Quảng Ngãi</option>
+                                                                                <option value="58">Quảng Ninh</option>
+                                                                                <option value="59">Quảng Trị</option>
+                                                                                <option value="60">Sóc Trăng</option>
+                                                                                <option value="61">Sơn La</option>
+                                                                                <option value="62">Tây Ninh</option>
+                                                                                <option value="63">Thái Bình</option>
+                                                                                <option value="64">Thái Nguyên</option>
+                                                                                <option value="15">Thanh Hóa</option>
+                                                                                <option value="65">Tiền Giang</option>
+                                                                                <option value="66">Trà Vinh</option>
+                                                                                <option value="67">Tuyên Quang</option>
+                                                                                <option value="68">Vĩnh Long</option>
+                                                                                <option value="69">Vĩnh Phúc</option>
+                                                                                <option value="70">Yên Bái</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="International cities">
+                                                                                <option value="141">Cities in Asia
+                                                                                </option>
+                                                                                <option value="146">Cities in Africa
+                                                                                </option>
+                                                                                <option value="145">Cities in Australia
+                                                                                    (Oceania)
+                                                                                </option>
+                                                                                <option value="142">Cities in Europe
+                                                                                </option>
+                                                                                <option value="143">Cities in North
+                                                                                    America
+                                                                                </option>
+                                                                                <option value="144">Cities in South
+                                                                                    America
+                                                                                </option>
+                                                                            </optgroup>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="edit-subject-wrapper"
+                                                                 class="views-exposed-widget views-widget-filter-field_subject_tid">
+                                                                <div class="views-widget">
+                                                                    <div class="form-item form-type-select form-item-subject">
+                                                                        <select id="edit-subject" name="subject"
+                                                                                class="form-select">
+                                                                            <option value="All" selected="selected">
+                                                                                -Chọn môn học-
+                                                                            </option>
+                                                                            <optgroup label="Môn học phổ thông">
+                                                                                <option value="72">Toán</option>
+                                                                                <option value="73">Lý</option>
+                                                                                <option value="74">Hóa</option>
+                                                                                <option value="76">Văn</option>
+                                                                                <option value="677">Tiếng Việt</option>
+                                                                                <option value="406">Lịch sử</option>
+                                                                                <option value="407">Địa lý</option>
+                                                                                <option value="81">Sinh</option>
+                                                                                <option value="410">Môn phổ thông khác
+                                                                                </option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Ngoại ngữ">
+                                                                                <option value="71">Tiếng Anh</option>
+                                                                                <option value="82">Tiếng Nhật</option>
+                                                                                <option value="83">Tiếng Hàn</option>
+                                                                                <option value="85">Tiếng Đức</option>
+                                                                                <option value="84">Tiếng Pháp</option>
+                                                                                <option value="409">Tiếng Trung</option>
+                                                                                <option value="86">Ngoại ngữ khác
+                                                                                </option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Học nghề">
+                                                                                <option value="77">Kỹ năng mềm</option>
+                                                                                <option value="404">Nuôi dạy trẻ
+                                                                                </option>
+                                                                                <option value="411">Công nghệ thông tin
+                                                                                </option>
+                                                                                <option value="412">Thiết kế - Đồ họa -
+                                                                                    Video
+                                                                                </option>
+                                                                                <option value="90">Sales - Marketing
+                                                                                </option>
+                                                                                <option value="682">Ẩm thực</option>
+                                                                                <option value="95">Ngành nghề khác
+                                                                                </option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Thể thao - Nghệ thuật">
+                                                                                <option value="97">Âm nhạc</option>
+                                                                                <option value="99">Hội họa</option>
+                                                                                <option value="101">Dance (nhảy)
+                                                                                </option>
+                                                                                <option value="78">Gyms, yoga, fitness
+                                                                                </option>
+                                                                                <option value="102">Thể thao khác
+                                                                                </option>
+                                                                                <option value="103">Nghệ thuật khác
+                                                                                </option>
+                                                                            </optgroup>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="edit-topic-wrapper"
+                                                                 class="views-exposed-widget views-widget-filter-field_study_topic_tid">
+                                                                <div class="views-widget">
+                                                                    <div class="form-item form-type-select form-item-topic">
+                                                                        <select id="edit-topic" name="topic"
+                                                                                class="form-select">
+                                                                            <option value="All" selected="selected">
+                                                                                -Chọn chủ đề-
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="edit-method-wrapper"
+                                                                 class="views-exposed-widget views-widget-filter-field_teaching_type_value">
+                                                                <div class="views-widget">
+                                                                    <div class="form-item form-type-select form-item-method">
+                                                                        <select id="edit-method" name="method"
+                                                                                class="form-select">
+                                                                            <option value="All" selected="selected">
+                                                                                -Hình thức dạy-
+                                                                            </option>
+                                                                            <option value="0">(Offline) Gặp mặt</option>
+                                                                            <option value="1">(Online) Trực tuyến
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="edit-gender-wrapper"
+                                                                 class="views-exposed-widget views-widget-filter-field_sex_value">
+                                                                <div class="views-widget">
+                                                                    <div class="form-item form-type-select form-item-gender">
+                                                                        <select id="edit-gender" name="gender"
+                                                                                class="form-select">
+                                                                            <option value="All" selected="selected">
+                                                                                -Giới tính-
+                                                                            </option>
+                                                                            <option value="0">Nữ</option>
+                                                                            <option value="1">Nam</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="edit-teacher-type-wrapper"
+                                                                 class="views-exposed-widget views-widget-filter-field_teacher_type_value">
+                                                                <div class="views-widget">
+                                                                    <div class="form-item form-type-select form-item-teacher-type">
+                                                                        <select id="edit-teacher-type"
+                                                                                name="teacher-type"
+                                                                                class="form-select">
+                                                                            <option value="All" selected="selected">
+                                                                                -Chọn
+                                                                                kiểu-
+                                                                            </option>
+                                                                            <option value="1">Sinh viên</option>
+                                                                            <option value="4">Giáo viên cấp 1</option>
+                                                                            <option value="5">Giáo viên cấp 2</option>
+                                                                            <option value="6">Giáo viên cấp 3</option>
+                                                                            <option value="7">Giảng viên đại học
+                                                                            </option>
+                                                                            <option value="9">Người nước ngoài</option>
+                                                                            <option value="3">Giáo viên mầm non</option>
+                                                                            <option value="2">Người đi làm</option>
+                                                                            <option value="8">Chuyên gia</option>
+                                                                            <option value="0">Học sinh</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="views-exposed-widget views-submit-button">
+                                                                <input type="submit" id="edit-submit-users" name=""
+                                                                       value="Áp dụng" class="form-submit"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="view-user-page2-filter ">
+
+                                        <!--Cout số kết quả-->
+                                        <div style="padding: 0 0 10px;font-size: 16px; color: #970218;">
+                                            Có 4069 kết quả
+                                        </div>
+                                    </div>
+
+                                    <!--if not empty, then show order by-->
+                                    <div class="header-block">
+                                        <button class="visible-xs"><i class="fa fa-list"></i></button>
+                                        <ul class="nav nav-tabs pull-left">
+                                            <li class="">
+                                                <a href="/tutor-list">Đúng nhất</a>
+                                            </li>
+                                            <li class="active">
+                                                <a href="">Đánh giá tốt nhất</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="/tutor-most-watch">Xem nhiều nhất</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="/tutor-most-price">Học phí tốt nhất</a>
+                                            </li>
+                                        </ul><!-- /.nav-tabs -->
+                                    </div><!-- /.header-block -->
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="tab-1">
+                                            <div class="view view-users view-id-users view-display-id-page_2 col-popover view-dom-id-5680190255ab07e96a03ed583ee83de8">
+                                                <div class="view-content">
+                                                    <div class="row">
+
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs2.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="le-phuong-huyen's picture"
+                                                                                 title="le-phuong-huyen's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Lê Phương Huyền</a>
+                                                                        </h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>100.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Tôi là sinh viên năm 2 trường Đại học Ngoại
+                                                                            Ngữ
+                                                                            HN, chuyên ngành Sư Phạm Tiếng Anh. Điểm GPA
+                                                                            môn
+                                                                            tiếng của tôi là 3.5...
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="13587"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs3.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="do-dinh-vinh's picture"
+                                                                                 title="do-dinh-vinh's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Đỗ Đình Vĩnh</a></h4>
+                                                                        <p><span>Quảng Ngãi</span> |
+                                                                            <span class="mon-hoc">Toán, Lý, Sinh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>150.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Với kinh nghiệm gia sư LTĐH trên 10 năm vào
+                                                                            các
+                                                                            trường Y Dược Tp.HCM, ĐH.Bách Khoa Tp.HCM,
+                                                                            Trường chuyên Lê Hồng Phong...
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="7385"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img src="{% static 'images/gs1.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="baotran's picture"
+                                                                                 title="baotran's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Trần Bảo</a></h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>400.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Tôi năm nay 41 tuổi và là người Anh gốc Việt
+                                                                            nam, đã trưởng thành từ London, Uk. Trình độ
+                                                                            học
+                                                                            vấn cao nhất là Thạc sĩ...
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="12596"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs4.png'%}"
+                                                                                 width="300" height="200"
+                                                                                 alt="hannguyen-230319's picture"
+                                                                                 title="hannguyen-230319's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Nguyễn Ngọc Hân</a>
+                                                                        </h4>
+                                                                        <p><span>TP. HCM</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh, Toán, Tiếng Việt</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>150.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            - Sinh viên ngành Ngôn ngữ Anh, ĐH Kinh tế
+                                                                            TP.HCM.
+                                                                            - Từng là trợ giảng trung tâm tiếng Anh
+                                                                            Apollo
+                                                                            - Kinh nghiệm dạy...
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="13460"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs5.png'%}"
+                                                                                 width="300" height="200"
+                                                                                 alt="tran-thanh-hien's picture"
+                                                                                 title="tran-thanh-hien's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Trần Thanh Hiền</a>
+                                                                        </h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>250.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Tham gia và đạt giải cao trong các kì thi
+                                                                            tiếng
+                                                                            anh cấp quốc gia và cấp tình ( Giải Nhất
+                                                                            tiếng
+                                                                            anh tỉnh Quảng Ninh )...
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="1538"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs6.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="huongvuong's picture"
+                                                                                 title="huongvuong's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Vương Thu Hương</a></h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Toán, Hóa</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>75.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Cháu xin chào các bậc phụ huynh. Cháu là
+                                                                            Vương
+                                                                            Thu Hương và hiện đang là sinh viên năm 2
+                                                                            trường
+                                                                            Đại học Ngoại Thương....
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="13754"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs7.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="tran-thu-thuy's picture"
+                                                                                 title="tran-thu-thuy's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Trần Thu
+                                                                            Thủy</a></h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Văn, Tiếng Việt, Lịch sử</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>150.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Tốt nghiệp cao đẳng sư phạm. Hiện tại đang
+                                                                            công
+                                                                            tác giảng dạy tại trường THCS Hữu Hoà. Từ
+                                                                            11/2014. Có nhiều thành tích...
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="13197"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs8.png'%}"
+                                                                                 width="300" height="200"
+                                                                                 alt="dang-van-tien's picture"
+                                                                                 title="dang-van-tien's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Đặng Văn Tiến</a></h4>
+                                                                        <p><span>Lai Châu</span> |
+                                                                            <span class="mon-hoc">Toán, Lý, Hóa</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>100.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Tốt nghiệp Đại học Sư phạm Hà Nội 2, đã có
+                                                                            kinh
+                                                                            nghiệm nhiều năm đứng lớp.
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="3961"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs11.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="ly-gia-han's picture"
+                                                                                 title="ly-gia-han's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Lý Gia Hân</a></h4>
+                                                                        <p><span>Bình Dương</span> |
+                                                                            <span class="mon-hoc">Tiếng Anh, Tiếng Nhật</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>120.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Giáo Viên có kinh nghiệm dạy kèm, luyện thi,
+                                                                            tại
+                                                                            trung tâm ngoại ngữ, tại công ty
+                                                                            Tốt nghiệp đại học chuyên ngành...
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="13328"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs12.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="le-thi-luong's picture"
+                                                                                 title="le-thi-luong's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Lê Thị Lương</a></h4>
+                                                                        <p><span>Nghệ An</span> |
+                                                                            <span class="mon-hoc">Toán, Hóa, Tiếng Việt, Sinh, Môn phổ thông khác, Tiếng Anh</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>100.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Hiện tại đang là sinh viên năm Ba, trường
+                                                                            Đại
+                                                                            học Vinh, trước là thủ khoa đầu vào của
+                                                                            trường.
+                                                                            Nay là cán bộ lớp, có...
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="11979"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs9.png'%}"
+                                                                                 width="300" height="200"
+                                                                                 alt="ma-ngoc-linh's picture"
+                                                                                 title="ma-ngoc-linh's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Ma Ngọc Linh</a></h4>
+                                                                        <p><span>Hà Nội</span> |
+                                                                            <span class="mon-hoc">Toán, Văn, Tiếng Việt, Tiếng Anh, Kỹ năng mềm</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>100.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Giới thiệu chung và kinh nghiệm gia sư,
+                                                                            giảng
+                                                                            dạy
+                                                                            - Là sinh viên năm cuối Học viện Ngoại giao
+                                                                            - 735 điểm TOEIC thi đợt...
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="13740"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col col-md-3 col-sm-6">
+                                                            <div class="box-content">
+                                                                <div class="tile-v-12">
+                                                                    <div class="img">
+                                                                        <a href="">
+                                                                            <img typeof="foaf:Image"
+                                                                                 src="{% static 'images/gs10.png' %}"
+                                                                                 width="300" height="200"
+                                                                                 alt="phucle18's picture"
+                                                                                 title="phucle18's picture">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="name">
+                                                                        <h4><a href="">Lê Tấn Phúc</a></h4>
+                                                                        <p><span>TP. HCM</span> |
+                                                                            <span class="mon-hoc">Công nghệ thông tin</span>
+                                                                        </p>
+                                                                        <p class="cost">
+                                                                            <span>200.000 vnđ/h</span>
+
+                                                                        </p>
+
+                                                                        <span class="number not-review">.</span>
+                                                                    </div><!-- /.name -->
+
+                                                                    <div class="description">
+                                                                        <div class="view">
+                                                                            Tốt nghiêp đại học KHTN TPHCM ngành Công
+                                                                            nghệ
+                                                                            thông tin.
+                                                                            Đi làm 4 năm về mảng lập trình web.
+                                                                            Có 4 năm kinh nghiêm giảng...
+                                                                        </div>
+                                                                    </div><!-- /.description -->
+                                                                    <div class="btn-bottom text-right">
+                                                                        <div class="btn-data" data-object="10554"
+                                                                             data-type="user"></div>
+                                                                        <!--<button class="invitation"  data-object="" data-type="user" data-studygroup="">Mời dạy</button> -->
+                                                                        <a href=""
+                                                                           class="btn btn-default ctools-use-modal ctools-use-modal-processed btn-outline-secondary"
+                                                                           rel="nofollow">Mời dạy</a>
+                                                                    </div>
+                                                                </div><!-- /.tile-v-12 -->
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /#tab-1 -->
+                                    </div><!-- /.tab-content -->
+
+                                    <div class="item-list">
+                                        <ul class="pager">
+                                            <li class="pager-first first"></li>
+                                            <li class="pager-current">1</li>
+                                            <li class="pager-item"><a title="Go to page 2" href="/teacher?page=1">2</a>
+                                            </li>
+                                            <li class="pager-item"><a title="Go to page 3" href="/teacher?page=2">3</a>
+                                            </li>
+                                            <li class="pager-item"><a title="Go to page 4" href="/teacher?page=3">4</a>
+                                            </li>
+                                            <li class="pager-item"><a title="Go to page 5" href="/teacher?page=4">5</a>
+                                            </li>
+                                            <li class="pager-ellipsis">…</li>
+                                            <li class="pager-next"><a href="/teacher?page=1"> sau ›</a></li>
+                                            <li class="pager-last last"><a href="/teacher?page=339">cuối ››</a></li>
+                                        </ul>
+                                    </div>
+                                </div><!-- /.content-category -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+$('#btnShowRegis').click(function() {
+$('#loginModal').modal('hide');
+});
+
+$('#btnShowLogin').click(function() {
+$('#regisModal').modal('hide');
+});
+});
+</script>
+{% endblock %}
+</body>
+</html>

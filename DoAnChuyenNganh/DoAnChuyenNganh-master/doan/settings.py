@@ -24,7 +24,7 @@ SECRET_KEY = '1@yjfyxg1xlz!-o%98!5yyv*b6s&yq9cn7)nuruuq5rsur3p=('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', 'localhost', '10.101.22.158']
 
 # Application definition
 
@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'accounts.context_processors.account_type_processor'
             ],
         },
     },

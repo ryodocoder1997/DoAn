@@ -1,9 +1,13 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
 <head>
-    <title>Điều khoản sử dụng</title>
+    {% block title %}
+    <title>Điều Khoản Sử Dụng</title>
+    {% endblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    {% block styles %}
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -23,327 +27,94 @@
 
     <!-- Customized CSS -->
     <link rel="stylesheet" href="{% static 'css/customized-bootstrap.css'%}">
-
+    {% endblock %}
 </head>
 <body style="background-color: #f2f2f2">
-<header>
-    <!-- BEGIN OF Navigation Bar -->
-    <nav class="navbar navbar-expand-sm bg-original navbar-dark fixed-top">
-        <!-- Web Logo -->
-        <a class="navbar-brand" href="homepage"><img src="{% static 'images/logo.png'%}"></a>
-        <div class="search-bar">
-            <form>
-                <input type="text" name="search" placeholder="Nhập bất cứ thứ gì bạn muốn tìm...">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-        </div><!--search-bar end-->
-
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Navigation Items -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#newcourse"><i class="fas fa-certificate"></i> Khóa Học</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#teacher"><i class="fas fa-user-tie"></i> Gia Sư</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#academy"><i class="fas fa-building"></i> Trung Tâm</a>
-                </li>
-                <button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal"
-                        data-target="#loginModal">Đăng Nhập
-                </button>
-            </ul>
-        </div>
-    </nav>
-    <!-- END OF Navigation Bar -->
-
-    <!-- Login Form Modal -->
-    <div class="modal fade" role="dialog" id="loginModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title"><i class="fas fa-sign-in-alt"></i> ĐĂNG NHẬP</h3>
-                    <button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal"
-                            data-target="#regisModal" id="btnShowRegis">Đăng Ký
-                    </button>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="form-group">
-                        <div class="container customRadio">
-                            <div class="row">
-                                <div class="col-4">
-                                    <input type="radio" name="acc-role-log" id="student-log" checked>
-                                    <label for="student-log">Học Sinh</label>
-                                </div>
-                                <div class="col-4">
-                                    <input type="radio" name="acc-role-log" id="tutor-log">
-                                    <label for="tutor-log">Gia Sư</label>
-                                </div>
-                                <div class="col-4">
-                                    <input type="radio" name="acc-role-log" id="lecture-log">
-                                    <label for="lecture-log">Giáo Viên/ Trung Tâm</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="user-input icon-input">
-                        <div class="form-group">
-                            <input type="text" name="username" class="form-control" placeholder="Tên tài khoản...">
-                            <i class="fas fa-user fa-lg fa-fw"></i>
-                        </div>
-                    </div>
-
-                    <div class="user-input icon-input">
-                        <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="Mặt khẩu...">
-                            <i class="fas fa-lock fa-lg fa-fw"></i>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="container customCheckbox">
-                            <div class="row">
-                                <div class="col-8">
-                                    <input type="checkbox" id="remember-acc-log">
-                                    <label for="remember-acc-log">Ghi nhớ đăng nhập của tôi</label>
-                                </div>
-
-                                <div class="col-4">
-                                    <a href="">Quên mật khẩu</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary">Đăng Nhập</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Register Form -->
-    <div class="modal fade" role="dialog" id="regisModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title"><i class="fas fa-pen-nib"></i> ĐĂNG KÝ</h3>
-                    <button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal"
-                            data-target="#loginModal" id="btnShowLogin">Đăng Nhập
-                    </button>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="form-group">
-                        <div class="container customRadio">
-                            <div class="row">
-                                <div class="col-4">
-                                    <input type="radio" name="acc-role-reg" id="student-reg" checked>
-                                    <label for="student-reg">Học Sinh</label>
-                                </div>
-                                <div class="col-4">
-                                    <input type="radio" name="acc-role-reg" id="tutor-reg">
-                                    <label for="tutor-reg">Gia Sư</label>
-                                </div>
-                                <div class="col-4">
-                                    <input type="radio" name="acc-role-reg" id="lecture-reg">
-                                    <label for="lecture-reg">Giáo Viên/ Trung Tâm</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="user-input icon-input">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Họ tên của bạn...">
-                            <i class="fas fa-user-plus fa-lg fa-fw"></i>
-                        </div>
-                    </div>
-
-                    <div class="user-input icon-input">
-                        <div class="form-group">
-                            <input type="text" name="username" class="form-control" placeholder="Tên tài khoản...">
-                            <i class="fas fa-user fa-lg fa-fw"></i>
-                        </div>
-                    </div>
-
-                    <div class="user-input icon-input">
-                        <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="Mặt khẩu...">
-                            <i class="fas fa-lock fa-lg fa-fw"></i>
-                        </div>
-                    </div>
-
-                    <div class="user-input icon-input">
-                        <div class="form-group">
-                            <input type="password" name="re-password" class="form-control"
-                                   placeholder="Nhập lại mật khẩu...">
-                            <i class="fas fa-lock fa-lg fa-fw"></i>
-                        </div>
-                    </div>
-
-                    <div class="user-input icon-input">
-                        <div class="form-group">
-                            <input type="text" name="email" class="form-control" placeholder="Email của bạn...">
-                            <i class="fas fa-envelope fa-lg fa-fw"></i>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <div class="container customCheckbox">
-                            <div class="row">
-                                <div class="col-12">
-                                    <input type="checkbox" id="agree-term-reg">
-                                    <label for="agree-term-reg">Tôi đồng ý với <a href="">Điều khoản sử dụng</a></label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary">Đăng Ký</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</header>
-
+{% block content %}
 <!-- BACKGROUND COLOR CONTENT -->
 <div class="style-banner-down" style="height: 300px;"></div>
 <div class="container">
     <div class="col-lg-2"></div>
-    <div class="col-lg-8 term-content">
-
+    <div class="col-lg-8 term-content shadow p-3 mb-5 bg-white rounded">
+        <h1 style="text-align: center; color: #e44d3a;">CHÍNH SÁCH BẢO MẬT & ĐIỀU KHOẢN SỬ DỤNG</h1>
+        <div class="tr_content"><p>ITGREEN luôn tôn trọng sự riêng tư của bạn, và đó là lý do chúng tôi luôn cam kết bảo
+            vệ những thông tin cá nhân của bạn. Trong tài liệu này, khái niệm “thông tin cá nhân” được hiểu bao gồm tên,
+            địa chỉ, địa chỉ email, số điện thoại hay bất kỳ thông tin cá nhân nào khác mà bạn cung cấp, hoặc bất kỳ
+            thông tin nào về bạn được thu thập theo luật định hiện hành. Mong rằng tài liệu sẽ giúp bạn hiểu rõ những
+            thông tin cá nhân nào mà chúng tôi sẽ thu thập, cũng như cách chúng tôi sử dụng những thông tin này sau
+            đó.<br> Khi bạn truy cập và sử dụng trang web (bao gồm cả việc đăng ký dịch vụ trực tuyến), chúng tôi hiểu
+            rằng bạn hoàn toàn đồng ý với những điều khoản của chính sách này.<br> <strong>1. KHAI BÁO KHI SỬ
+                DỤNG</strong><br> Tất cả nội dung bạn xem được trên trang web nhằm phục vụ nhu cầu thông tin của bạn và
+            giúp bạn lựa chọn dịch vụ. Vì thế, bạn được sử dụng trang web mà không cần cung cấp bất kỳ thông tin cá nhân
+            nào. Tuy nhiên, trong một số trường hợp, khi liên quan đến việc đăng ký dịch vụ, chúng tôi có thể yêu cầu
+            bạn cung cấp thông tin cá nhân.</p>
+            <p><strong>2. THÔNG TIN CÁ NHÂN DO BẠN CUNG CẤP</strong><br> Khi bạn cung cấp các thông tin cần thiết, chúng
+                tôi sẽ sử dụng chúng để đáp ứng yêu cầu của bạn, hoặc chúng tôi có thể liên lạc với bạn qua thư từ,
+                email, tin nhắn hay điện thoại; hoặc tuân theo luật định hiện hành, sử dụng các phương tiện trên để giới
+                thiệu đến bạn những sản phẩm, dịch vụ hay chương trình khuyến mãi mới từ ITGREEN. Khi cung cấp thông tin
+                cho chúng tôi qua trang web này, bạn hiểu rõ và chấp thuận việc thu thập, sử dụng và tiết lộ những thông
+                tin cá nhân nêu trên cho một số mục đích được quy định trong trang này.<br> Bạn hoàn toàn đồng ý và chấp
+                thuận rằng những thông tin cá nhân bạn cung cấp khi sử dụng trang web có thể được bảo lưu tại trụ sở hay
+                chi nhánh của ITGREEN, có thể được lưu trữ tại một số máy chủ hiện có hay chưa biết trước cho mục đích
+                vận hành và phát triển trang web cũng như các dịch vụ của ITGREEN.<br> Nếu bạn đặt hàng một sản phẩm,
+                yêu cầu một dịch vụ hoặc gởi thư phản hồi lên trang web, chúng tôi có thể liên hệ với bạn để có những
+                thông tin bổ sung cần thiết cho việc xử lý hoặc hoàn thành đơn đặt hàng và / hoặc yêu cầu của bạn. Tuy
+                nhiên, chúng tôi sẽ không cung cấp thông tin này cho một bên thứ ba mà không được sự cho phép của bạn,
+                trừ trường hợp bị pháp luật hiện hành bắt buộc hoặc trường hợp cần thiết để xử lý đơn đặt hàng (ví dụ:
+                đăng ký với VNNIC, giải quyết tranh chấp).<br> ITGREEN cam kết bảo vệ sự riêng tư của bạn, không mua bán
+                thông tin cá nhân của bạn cho các công ty khác vì các mục đích khuyến mãi.</p>
+            <p><strong>3. CUNG CẤP CHO CÁC ĐƠN VỊ KHÁC</strong><br> Chúng tôi có thể sử dụng một số đơn vị khác để cung
+                cấp sản phẩm hay dịch vụ cho bạn. Chúng tôi cũng cần trao đổi thông tin cá nhân của bạn đến các đơn vị
+                này để họ hoàn thành yêu cầu của bạn. Những đơn vị này cũng không được phép sử dụng thông tin cá nhân
+                của bạn cho các mục đích khác và chúng tôi đồng thời yêu cầu họ tuân theo quy định bảo mật khi tiến hành
+                cung cấp dịch vụ.</p>
+            <p><strong>4. GHI NHẬN THÔNG TIN TRÌNH DUYỆT</strong><br> Đôi khi, thông tin có thể được đưa vào máy tính
+                của bạn để giúp chúng tôi nâng cấp trang web hay cải thiện chất lượng dịch vụ cho bạn. Những thông tin
+                này thường được biết đến dưới dạng các “cookies” mà nhiều trang web hiện cũng đang sử dụng. “Cookies” là
+                những mẩu thông tin lưu trữ trong đĩa cứng hay trình duyệt trên máy tính của bạn, không phải trên trang
+                web. Chúng cho phép thu thập một số thông tin về máy tính của bạn như địa chỉ IP, hệ điều hành, chế độ
+                trình duyệt và địa chỉ của các trang web liên quan. Nếu bạn không muốn nhận các cookies này, hoặc muốn
+                được thông báo khi các cookies này được đặt vào, bạn có thể cài đặt chế độ trình duyệt của bạn thực hiện
+                điều này nếu trình duyệt của bạn hỗ trợ. Vui lòng lưu ý, nếu bạn tắt chế độ nhận cookies, bạn sẽ không
+                thể truy cập hay sử dụng một số tiện ích trên trang web mà không được xác định trước. Chúng tôi không cố
+                ý hạn chế việc sử dụng của bạn trong tình huống này, đây chỉ là giới hạn trong việc lập trình và xây
+                dựng trang web.</p>
+            <p><strong>5. AN TOÀN THÔNG TIN</strong><br> Khi lập trình trang web, chúng tôi có thể đặt những luật định
+                hợp lý mang tính thương mại để ngăn chặn hành vi truy cập bất hợp pháp và việc sử dụng không thích đáng
+                các thông tin cá nhân của bạn đã gửi cho ITGREEN thông qua việc sử dụng trang web này. Nếu trang web này
+                hỗ trợ việc giao dịch trực tuyến, nó sẽ được áp dụng một tiêu chuẩn công nghệ được gọi là SSL (Secure
+                Sockets Layer), để bảo vệ tính bảo mật và an toàn trên đường truyền dữ liệu. Vì luôn có những rủi ro
+                liên quan đến vấn đề cung cấp dữ liệu cá nhân, cho dù là cung cấp trực tiếp, qua điện thoại hay qua mạng
+                internet, hay qua các phương tiện kỹ thuật khác; và không có hệ thống kỹ thuật nào an toàn tuyệt đối hay
+                chống được tất cả các “hacker” và “tamper” (người xâm nhập trái phép để lục lọi thông tin), ITGREEN luôn
+                nỗ lực tiến hành những biện pháp đề phòng thích hợp đối với từng đặc tính của thông tin để ngăn chặn và
+                giảm thiểu tối đa các rủi ro có thể khi bạn sử dụng trang web này.</p>
+            <p><strong>6. THÔNG TIN QUA EMAIL</strong><br> Khi bạn đăng ký dịch vụ, địa chỉ e-mail của bạn cung cấp sẽ
+                dùng làm công cụ trao đổi thông tin với bạn. Trước hết bạn hãy chắc rằng bạn cung cấp địa chỉ e-mail hữu
+                dụng đối với bạn trong suốt quá trình sử dụng dịch vụ. Chúng tôi có thể gởi những thông tin bí mật qua
+                e-mail hay tiếp nhận yêu cầu hỗ trợ của bạn. Trong trường hợp bạn không còn sử dụng e-mail đã cung cấp,
+                bạn phải báo cho chúng tôi để về việc thay đổi này. Để bảo vệ bạn, ITGREEN có thể tạm thời ngưng tiếp
+                nhận yêu cầu qua e-mail bạn đã cung cấp nếu nhận thấy có sự gian lận hoặc thông tin bất thường – cho đến
+                khi chúng tôi liên hệ được với bạn để xác nhận.</p>
+            <p><strong>7. ĐIỀU CHỈNH THÔNG TIN</strong><br> ITGREEN sẽ chủ động hoặc theo yêu cầu của bạn bổ sung, hiệu
+                chỉnh hay tẩy xóa các dữ liệu thông tin cá nhân không chính xác, không đầy đủ hoặc không cập nhật khi
+                bạn còn liên kết với hoạt động của chúng tôi.</p>
+            <p><strong>8. TRẺ VỊ THÀNH NIÊN</strong><br> ITGREEN từ chối phục vụ cá nhân còn ở độ tuổi Trẻ vị thành niên
+                (do luật pháp địa phương mà bạn cư ngụ quy định) không được quyền mua hay tìm cách sử dụng dựa trên điều
+                lệ hợp pháp khác trên trang web này nếu không có sự chấp thuận của ba/mẹ hay người giám hộ hợp pháp, trừ
+                khi luật pháp địa phương có áp dụng hay cho phép.</p>
+            <p><strong>9. LIÊN KẾT NGOÀI TRANG WEB</strong><br> Trang web này có thể chứa các đường liên kết đến các
+                trang web khác được đặt vào nhằm mục đích giới thiệu hoặc bổ sung thông tin liên quan để bạn tham khảo.
+                ITGREEN không chịu trách nhiệm về nội dung hay các hành vi của bất kỳ trang web nào khác.</p>
+            <p><strong>10. THAY ĐỔI QUY ĐINH</strong><br> ITGREEN có thể thay đổi quy định này một cách không thường
+                xuyên, bao gồm việc bổ sung, loại bỏ một phần nội dung hoặc tạm ngưng trang web mà không cần báo trước.
+                Tuy nhiên, nếu quy định này được thay đổi theo hướng có thể gây bất lợi cho bạn, ITGREEN sẽ cố gắng
+                thông báo về sự thay đổi qua e-mail bạn đã cung cấp hoặc ngay trên trang chủ.</p></div>
     </div>
     <div class="col-lg-2"></div>
 </div>
-
-<!-- BEGIN OF FOOTER -->
-<footer>
-    <div style="background-color: #fff;">
-        <section class="container pt-3 text-center">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Cộng đồng hơn 15,000 thành viên đang chờ bạn</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Icon -->
-        <div class="container-fluid">
-            <div class="row justify-content-center text-center">
-                <a class="social-btn" href=""><img src="{% static 'images/facebook.png'%}"></a>
-                <a class="social-btn" href=""><img src="{% static 'images/twitter.png'%}"></a>
-                <a class="social-btn" href=""><img src="{% static 'images/google-plus.png'%}"></a>
-                <a class="social-btn" href=""><img src="{% static 'images/youtube.png'%}"></a>
-                <a class="social-btn" href=""><img src="{% static 'images/zalo.png'%}"></a>
-            </div>
-        </div>
-        <!-- END OF Social Network -->
-    </div>
-
-    <div class="footer-main-category">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 col-sm-6 col-xs-6">
-                    <div class="list-links">
-                        <h3>Bạn đang muốn</h3>
-                        <ul>
-                            <li><a href="/tao-lop-hoc">Đăng yêu cầu tìm gia sư</a></li>
-                            <li><a href="/teacher">Xem danh sách gia sư</a></li>
-                            <li><a href="https://www.giasuvip.vn" target="_blank">Dịch vụ gia sư VIP</a></li>
-                            <li><a href="/become-agency">Mở trung tâm GS<span style="color:yellow"> (hot)</span></a>
-                            </li>
-                            <li><a href="#recommendation" class="popup-modal">Góp ý cho chúng tôi</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-6 col-xs-6">
-                    <div class="list-links">
-                        <h3>Danh mục gia sư</h3>
-                        <ul>
-                            <li><a href="/gia-su-toan">Gia sư toán</a></li>
-                            <li><a href="/gia-su-tieng-anh">Gia sư Tiếng Anh</a></li>
-                            <li><a href="/gia-su-online">Gia sư Online</a></li>
-                            <li><a href="/gia-su-ngoai-ngu">Gia sư ngoại ngữ</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-6 col-xs-6">
-                    <div class="list-links">
-                        <h3>Chúng tôi</h3>
-                        <ul>
-                            <li><a href="/gioi-thieu">Về chúng tôi</a></li>
-                            <li><a href="/jobs">Tuyển dụng</a></li>
-                            <li><a href="/terms-of-use" rel="nofollow">Quy định MXH Chúng tôi</a></li>
-                            <li><a href="/quy-dinh-su-dung-san-giao-dich-tmdt" rel="nofollow">Quy định sàn TMĐT</a></li>
-                            <li><a href="/privacy-policy" rel="nofollow">CC bảo mật thông tin</a></li>
-                            <li><a href="/contact">Liên hệ</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-6 col-xs-6">
-                    <div class="list-links">
-                        <h3>Hỗ Trợ</h3>
-                        <ul>
-                            <li><a href="/support">Hướng dẫn sử dụng</a></li>
-                            <li><a href="/affiliate-program">Affiliate Program</a></li>
-                            <li><a href="/invite-friend">Mời bạn bè</a></li>
-                            <li><a href="/khieu-nai">Khiếu nại</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-6 col-xs-6">
-                    <div class="list-links">
-                        <h3>Dự án cộng đồng</h3>
-                        <ul>
-                            <li><a href="/cam-nang-tri-thuc">Cẩm nang tri thức</a></li>
-                            <li><a href="/kien-thuc-du-hoc">Kiến thức du học</a></li>
-                            <li><a href="/project-education-support">Gia sư miễn phí</a></li>
-                            <li><a href="/books-in-the-city">Sách truyền tay</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-6 col-xs-6">
-                    <div class="list-links">
-                        <h3>Dành Cho Gia sư</h3>
-                        <ul>
-                            <li><a href="/dang-ky-gia-su">Trở thành gia sư</a></li>
-                            <li><a href="/class">Danh sách lớp mới</a></li>
-                            <li><a href="/become-teacher">Hướng dẫn nhận lớp</a></li>
-                            <li><a href="/chinh-sach-phi" rel="nofollow">Chính sách phí</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</footer><!--footer end-->
-<!-- END OF FOOTER -->
-
+{% endblock %}
+{% block scripts %}
 <!-- JAVASCRIPT -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -368,5 +139,7 @@
       });
 
 
+
 </script>
+{% endblock %}
 </body>
